@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ThumbnailItemComponent } from './shared/thumbnail-item/thumbnail-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ThumbnailItemComponent
   ],
   imports: [
     BrowserModule,
