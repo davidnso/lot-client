@@ -19,7 +19,20 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FormComponent } from './checkout/components/form/form.component';
 import { OrderSummaryComponent } from './checkout/components/order-summary/order-summary.component';
-import { PlugComponent } from './LOT/plug/plug.component';
+import { PlugComponent } from './lot/plug/plug.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatTabsModule} from '@angular/material/tabs';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatRadioModule} from '@angular/material/radio';
+import { CreateStoreComponent } from './create-store/create-store.component';
+import { LotComponent } from './lot/lot.component';
+import { StoreComponent } from './lot/dashboards/store/store.component';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +44,7 @@ import { PlugComponent } from './LOT/plug/plug.component';
     AuthComponent,
     LandingComponent,
     StoreBuilderComponent,
+    StoreComponent,
     BrowseComponent,
     LikeComponent,
     FeedbackComponent,
@@ -40,11 +54,24 @@ import { PlugComponent } from './LOT/plug/plug.component';
     CheckoutComponent,
     FormComponent,
     OrderSummaryComponent,
-    PlugComponent
+    PlugComponent,
+    CreateStoreComponent,
+    LotComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    CommonModule,
+    FormsModule,
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    MatRadioModule,
+    MatRadioModule,
+    MatTabsModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
