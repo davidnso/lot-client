@@ -1,0 +1,183 @@
+.section.cc-product-detail {
+    display: flex;
+    align-items: center;
+}
+
+.section {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.product-image {
+    display: flex;
+    width: 50%;
+    height: 700px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(244, 244, 244);
+    background-image: url('../../assets/paul-volkmer-AZf7DL-8Qhk-unsplash.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.product-detail-name {
+    margin-bottom: 10px;
+    font-size: 36px;
+    line-height: 52px;
+    font-weight: 400;
+}
+.product-detail-price {
+    margin-bottom: 20px;
+    opacity: 0.6;
+    font-size: 30px;
+    line-height: 52px;
+}
+.paragraph-light {
+    opacity: 0.6;
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 0px;
+    text-transform: none;
+}
+
+.product-details-wrap {
+    width: 50%;
+    max-width: 470px;
+    margin-bottom: 20px;
+    margin-left: 100px;
+}
+
+.product-detail-main-details {
+    margin-bottom: 30px;
+}
+
+.divider {
+    height: 1px;
+    background-color: rgb(238, 238, 238);
+}
+.divider.cc-dark-divider {
+    height: 1px;
+    background-color: rgb(32, 32, 32);
+}
+
+.product-informations {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.w-list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+.list-item {
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    justify-content: space-between;
+}
+ul {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 40px;
+    list-style-type: disc;
+}
+li {
+    margin-bottom: 10px;
+}
+
+.label {
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.select {
+    height: 42px;
+    margin-bottom: 16px;
+}
+.w-select {
+    background-color: #f3f3f3;
+}
+.w-input, .w-select {
+    display: block;
+    width: 100%;
+    height: 38px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333333;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+.add-to-cart {
+    margin-top: 30px;
+}
+.product-detail-cta-wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.text-field {
+    margin-bottom: 18px;
+    padding: 21px 20px;
+    border: 1px solid #e4e4e4;
+    border-radius: 0px;
+    -webkit-transition: border-color 400ms ease;
+    transition: border-color 400ms ease;
+    font-size: 14px;
+    line-height: 26px;
+}
+.text-field.cc-quantity-field {
+    width: 80px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    padding-right: 12px;
+    padding-left: 20px;
+    border-color: #e6e6e6;
+    background-color: #fff;
+}
+.button {
+    padding: 12px 25px;
+    border-radius: 0px;
+    background-color: #1a1b1f;
+    -webkit-transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
+    transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
+    color: #fff;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.w-commerce-commerceaddtocartform {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 15px;
+    margin-left: 0px;
+}
+.status-message {
+    padding-top: 9px;
+    padding-right: 30px;
+    padding-bottom: 9px;
+    padding-left: 30px;
+    background-color: rgb(32, 32, 32);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 26px;
+    text-align: center;
+}
+.w-commerce-commerceaddtocartoutofstock {
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(221, 221, 221);
+}
