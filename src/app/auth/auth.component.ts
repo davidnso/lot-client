@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
+  continueClicked: boolean = false;
   constructor() { }
 
   ngOnInit() {
   }
 
+  continue(){
+    this.continueClicked = true;
+  }
 }

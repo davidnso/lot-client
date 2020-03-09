@@ -1,0 +1,82 @@
+.loginbox{
+    width: 600px;
+    min-height: 500px;
+    background: #FCFCFC;
+    color: #508BFF;
+    top: 50%;
+    left: 50%;
+    font-family: Nunito;
+    border-radius: 5px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    padding: 70px 30px;
+    animation: slide-up-fade-in 2s;
+}
+
+.auth-container{
+    margin: auto;
+    margin-top: 20px;
+    max-width: 100%;
+    text-align: center;
+
+}
+
+.button-wrapper{
+    width: 100%;
+    text-align: center;
+}
+
+.left-auth-container{
+    text-align: left;
+    width: 80%;
+    margin: auto;
+}
+
+.signIn{
+width: 300px;
+height: 50px;
+background: #212121;
+color: white;
+text-align: center;
+border-radius: 5px;
+}
+
+::ng-deep .mat-tab-label .mat-tab-label-content {
+    font-size: large;
+}
+
+
+.mat-form-field{
+    width: 60%;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 10px 10px;
+    padding: 0px;
+}
+
+.mat-form-field.xs{
+    width: 30%;
+}
+
+.mat-form-field-wrapper{
+    padding-bottom: 0px;
+}
+
+
+/*
+animations
+*/
+@keyframes slide-up-fade-in{
+    0% {
+        opacity:0;
+        transform:  translate(-50%,-45%)  ;
+    }
+    100% {
+        opacity:1;
+        transform:  translate(-50%,-50%)  ;
+    }
+  }
+
