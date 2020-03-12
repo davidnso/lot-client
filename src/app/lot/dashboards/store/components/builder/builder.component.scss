@@ -1,0 +1,106 @@
+.form-wrapper{
+    background-color: white;
+    padding: 30px;
+    width: 90%;
+    margin-top: 30px;
+    margin:auto;
+}
+
+::ng-deep .mat-form-field-infix{
+    background-color: #F0F0F0;
+    height: 10px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+
+
+
+.s1{
+    margin-bottom:50px;
+    margin-left: 30px;
+    .add-photos-wrapper{
+        width: 90%;
+        padding: 20px;
+        background-color: #FBFBFB;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    h3{
+        color: #D2D2D2;
+    }
+    .wide-text-area{
+        min-width: 90%;
+        ::ng-deep .mat-form-field-wrapper{
+            background-color: #F0F0F0;
+            border-radius: 5px;
+        }
+    }
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 85%;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    span{
+        cursor: pointer;
+    }
+    span{
+        p{
+            transition: .3s ease-in-out;
+        }
+    }
+    span:hover{
+        p{
+            color: blue;
+        }
+    }
+}
+
+.large-button{
+    height: 90px;
+}
+.medium-button{
+    width: 70px;
+    height: 75px;
+    background-color: #F8F8F8;
+    border-radius: 10px;
+}
+
+.row.justify-none{
+    justify-content: flex-start;
+    vertical-align: middle;
+}
+.row.justify-right{
+    justify-content: flex-end;
+    vertical-align: middle;
+}
+
+.button-w-padding{
+    margin:0px 20px;
+    vertical-align: middle;
+    width: 100px;
+    height: 40px;
+}
+.button-w-padding.xl{
+    margin:0px 20px;
+    vertical-align: middle;
+    width: 160px;
+    height: 40px;
+}
+
+.button-w-padding.xl.blue{
+    background-color: #4383E2;
+    color: white;
+
+}
+.button-w-padding.xl.black{
+    border: 1px solid black;
+
+}

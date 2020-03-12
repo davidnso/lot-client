@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./builder.component.scss']
 })
 export class BuilderComponent implements OnInit {
+  brands = [''];
+  index = 0;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit() {}
+  
+  swapIndex(selectedIndex) {
+    this.index = selectedIndex;
   }
-
 }
