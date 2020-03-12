@@ -8,10 +8,11 @@ import { CustomerComponent } from './dashboards/customer/customer.component';
 import { StatsComponent } from './dashboards/store/components/stats/stats.component';
 import { OrdersComponent } from './dashboards/store/components/orders/orders.component';
 import { ListingsComponent } from './dashboards/store/components/listings/listings.component';
+import { BuilderComponent } from './dashboards/store/components/builder/builder.component';
 
 
 @NgModule({
-  declarations: [PlugComponent, StoreComponent, CustomerComponent, StatsComponent, OrdersComponent, ListingsComponent],
+  declarations: [PlugComponent, StoreComponent, CustomerComponent, StatsComponent, OrdersComponent, ListingsComponent,BuilderComponent],
   imports: [
     CommonModule,
     LOTRoutingModule
