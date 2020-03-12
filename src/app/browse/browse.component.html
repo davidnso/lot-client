@@ -1,1 +1,79 @@
-<p>browse works!</p>
+<app-category-filter></app-category-filter>
+
+<div class="filtered-browse-wrapper">
+    <div class="filter-wrapper">
+        <ul>
+            <p class="paragraph-light filter">Lifestyle ( # )</p>
+            <p class="paragraph-light filter">Jordan ( # )</p>
+            <p class="paragraph-light filter">Running ( # )</p>
+            <p class="paragraph-light filter">Basketball ( # )</p>
+            <p class="paragraph-light filter">Golf ( # )</p>
+            <div class="divider filter"></div>
+            <h5>Gender</h5>
+            <p class="paragraph-light filter">Men</p>
+            <p class="paragraph-light filter">Women</p>
+            <div class="divider filter"></div>
+            <h5>Kids</h5>
+            <p class="paragraph-light filter">Boys</p>
+            <p class="paragraph-light filter">Girls</p>
+            <h5>Shop by price</h5>
+            <p class="paragraph-light filter">$0-$49.99</p>
+            <p class="paragraph-light filter">$50-$99.99</p>
+            <p class="paragraph-light filter">$100-$149.99</p>
+            <p class="paragraph-light filter">$150-$199.99</p>
+            <p class="paragraph-light filter">over $200</p>
+
+            <h5>Color</h5>
+            <div class="filter-grid">
+                <div class="filter-item unselected white"></div>
+                <div class="filter-item unselected black"></div>
+                <div class="filter-item unselected grey"></div>
+                <div class="filter-item unselected red"></div>
+                <div class="filter-item unselected blue"></div>
+                <div class="filter-item unselected purple"></div>
+                <div class="filter-item unselected yellow"></div>
+                <div class="filter-item unselected white"></div>
+
+            </div>
+            <h5>Size</h5>
+            <div class="size-grid">
+                <div class="option"><p>5</p></div>
+                <div class="option"><p>6</p></div>
+                <div class="option"><p>7</p></div>
+                <div class="option"><p>8</p></div>
+                <div class="option"><p>9</p></div>
+                <div class="option"><p>10</p></div>
+                <div class="option"><p>11</p></div>
+                <div class="option"><p>12</p></div>
+                <div class="option"><p>5</p></div>
+                <div class="option"><p>6</p></div>
+                <div class="option"><p>7</p></div>
+                <div class="option"><p>8</p></div>
+                <div class="option"><p>9</p></div>
+                <div class="option"><p>10</p></div>
+                <div class="option"><p>11</p></div>
+                <div class="option"><p>12</p></div>
+              </div>
+        </ul>
+    </div>
+    <div class="column-box">
+        <!-- <ng-container [ngSwitch]="activeParam" >
+            <div  *ngSwitchCase="'apparel'" class="title-line">
+                <h2>Apparel</h2>
+
+            </div>
+        </ng-container> -->
+        <div class ="content-row">
+            <app-thumbnail-item></app-thumbnail-item>
+            <app-thumbnail-item></app-thumbnail-item>
+            <app-thumbnail-item></app-thumbnail-item>
+            <app-thumbnail-item></app-thumbnail-item>
+            <app-thumbnail-item></app-thumbnail-item>
+          </div>
+        <mat-paginator [length]="100"
+[pageSize]="10"
+[pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>
+    </div>
+    
+</div>

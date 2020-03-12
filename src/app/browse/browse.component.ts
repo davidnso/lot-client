@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-browse',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrowseComponent implements OnInit {
 
-  constructor() { }
+  activeParam: string;
+
+  constructor(private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => this.activeParam = params.category)
+  }
 
   ngOnInit() {
   }
