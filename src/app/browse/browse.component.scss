@@ -1,0 +1,119 @@
+.content-row{
+    margin:auto;
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+    flex-direction: row;
+    font-weight: 500;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    animation: fadein 4s;
+    text-align: center;
+
+}
+
+.filtered-browse-wrapper{
+    display: flex;
+    flex-direction: row;
+    min-height: 1200px;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.filter-container {
+    width: 20%;
+    min-width: 300px;
+    margin-right: 20px;
+  }
+  
+  .paragraph-light.filter {
+    cursor: pointer;
+    margin: 5px 0px;
+    transition: ease-in;
+  }
+  .paragraph-light:hover {
+    color: blue;
+  }
+  
+  .divider.filter {
+    margin: 25px 0px;
+  }
+
+  .filter-grid{
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+
+  .title-line{
+      width: 100%;
+      text-align: center;
+  }
+
+  .size-grid{
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5px;
+    row-gap: 10px;
+    .option{
+        display: table;
+        width: 30px;
+        height: 30px;
+        margin-top:10px;
+        border-radius:  5px;
+        border: 1px solid #747474;
+        color: #747474;
+        margin-right: 10px;
+        cursor: pointer;
+        text-align: center;
+        align-items: center;
+        transition: .2s ease-in-out;
+        p{
+            padding: 0px;
+            margin:0px;
+        }
+    }
+    .option:hover{
+        background-color: #e0e0e0
+    }
+  }
+
+  .filter-item.unselected{
+      border:1px solid black;
+      width: 20px;
+      height: 20px;
+      border-radius: 100px;
+  }
+
+  
+  .filter-item.unselected.white{
+    background-color: white;
+}
+
+.filter-item.unselected.black{
+    background-color: black;
+}
+.filter-item.unselected.grey{
+    background-color: grey;
+}
+.filter-item.unselected.red{
+    background-color: red;
+}
+.filter-item.unselected.blue{
+    background-color: blue;
+}
+.filter-item.unselected.purple{
+    background-color: purple;
+}
+.filter-item.unselected.yellow{
+    background-color: yellow;
+}
+
+.column-box{
+    display: flex;
+    flex-direction: column;
+}

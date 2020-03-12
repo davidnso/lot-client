@@ -1,8 +1,61 @@
-<div>
-    <h5>The Plug</h5>
+<div class="banner">
+    <h5 style="margin:0px">The Plug</h5>
     <p class="paragraph-light">Lock in a deal on whatever you're looking for</p>
 </div>
 <div>
-    <div>
+    <div class="form-wrapper">
+        <div class="row">
+            <span (click)="swapIndex(1)">
+                <img src="../../../../../../assets/shoe.png" class="large-button"/>
+                <p class="paragraph-light">Footwear</p>
+            </span>
+            <span (click)="swapIndex(2)">
+                <img src="../../../../../../assets/shirt.png" class="large-button"/>
+                <p class="paragraph-light">Apparel</p>
+            </span>
+            <span (click)="swapIndex(3)">
+                <img src="../../../../../../assets/watch.png" class="large-button"/>
+                <p class="paragraph-light">Accessories</p>
+            </span>
+        </div>
+        <div class="row"  *ngIf="index === 0 || index === null || index === undefined">Please select a Category</div>
+        <div class="row"  *ngIf="index === 1">
+            <span>
+                <div class="medium-button"></div>
+                <p class="paragraph-light">Loafers</p>
+            </span>
+            <span>
+                <div class="medium-button"></div>
+                <p class="paragraph-light">Basketball</p>
+            </span>
+            <span>
+                <div class="medium-button"></div>
+                <p class="paragraph-light">Lifestyle</p>
+            </span>
+            <span>
+                <div class="medium-button"></div>
+                <p class="paragraph-light">Running</p>
+            </span>
+            <span>
+                <div class="medium-button"></div>
+                <p class="paragraph-light">Other</p>
+            </span>
+        </div>
+        <div class="row" *ngIf="index === 2">Apparel Selected</div>
+        <div class="row" *ngIf="index === 3">Accessories Selected</div>
+        <div class="s1 center">
+            <h6>Item name</h6>
+            <mat-form-field>
+                <mat-label>What's it called</mat-label>
+                <input matInput/>
+            </mat-form-field>
+        </div>
+        <div class="s1">
+
+            <div>
+                
+            </div>
+        </div>
+        
     </div>
 </div>

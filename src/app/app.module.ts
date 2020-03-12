@@ -35,6 +35,10 @@ import { StoreComponent } from './lot/dashboards/store/store.component';
 import { BuilderComponent } from './lot/dashboards/store/components/builder/builder.component';
 import { LOTModule } from './lot/lot.module';
 import { CustomerComponent } from './lot/dashboards/customer/customer.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatSelectModule} from '@angular/material/select';
+import { CategoryFilterComponent } from './shared/category-filter/category-filter.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({
@@ -63,6 +67,8 @@ import { CustomerComponent } from './lot/dashboards/customer/customer.component'
     LotComponent,
 
     CustomerComponent,
+
+    CategoryFilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +83,9 @@ import { CustomerComponent } from './lot/dashboards/customer/customer.component'
     MatRadioModule,
     MatTabsModule,
     MatInputModule,
+    MatPaginatorModule,
+    MatButtonToggleModule,
+    MatSelectModule,
     MatFormFieldModule
   ],
   providers: [],
