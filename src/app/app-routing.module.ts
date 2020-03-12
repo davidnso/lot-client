@@ -50,6 +50,10 @@ const routes: Routes = [
   {
     path: 'create-listing',
     component: BuilderComponent
+  },
+  {
+    path: 'plug',
+    component: PlugComponent
   }
 ];
 

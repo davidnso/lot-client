@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "lot-client"
+  "defaultProject": "lot-client",
+  "cli": {
+    "analytics": "44cf8a95-84df-41a7-9b25-5e8f99b037b2"
+  }
 }
