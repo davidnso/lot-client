@@ -1,0 +1,113 @@
+.profile-wrapper{
+    background-color: white;
+    width: 95%;
+    min-height: 300px;
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+}
+
+.profile-image{
+    border-radius: 200px;
+    width: 130px;
+    height: 130px;
+}
+
+.edit-button{
+    color: #4383E2;
+}
+
+.account-info{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+//Suggestions
+.suggestion-wrapper{
+    background-color: white;
+    padding-top: 30px;
+    margin-top: 10px;
+    min-height: 700px;
+    text-align: center;
+    border: 1px solid #D1D1D1;
+    border-radius: 3px;
+    span{
+        margin:auto;
+    }
+}
+
+.suggestion-title{
+    text-align: center;
+    background-color: white;
+    border: 1px solid #D1D1D1;
+    border-radius: 3px;
+}
+
+.item-image{
+    width: 60px;
+    height: 120px;
+}
+
+//Table styles...
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+    border-color: #ccc;
+    width: 100%;
+  }
+  .tg td {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 5px 5px;
+    border-style: solid;
+    border-bottom-width:1px;border-color:#ccc;
+    border-width: 0px;
+    overflow: hidden;
+    word-break: normal;
+    border-color: #ccc;
+    color: rgb(121, 121, 121);
+  }
+  .tg th {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 5px 5px;
+    border-style: solid;
+    border-width: 0px;
+    overflow: hidden;
+    word-break: normal;
+    border-color: #ccc;
+    color: #333;
+    background-color: #f0f0f0;
+  }
+  .tg tr{
+    transition: .5s ease-in-out;
+  }
+  .tg tr:hover{
+    cursor: pointer;
+    background-color: #FAFCFF !important;
+  }
+  .tg .table-col.xl{
+    min-width: 170px;
+  }
+  .tg .table-col {
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top;
+  }
+  
+  .tg .table-data {
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top;
+  }
+  //End of table styles 
+
+.item-img-medium{
+    height: 180px;
+    width: 160px;
+    border-radius: 10px;
+}
