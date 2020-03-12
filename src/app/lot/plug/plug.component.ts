@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlugComponent implements OnInit {
 
-  constructor() { }
+  brands = [''];
+  index = 0;
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+  
+  swapIndex(selectedIndex) {
+    this.index = selectedIndex;
   }
-
 }
