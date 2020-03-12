@@ -1,49 +1,75 @@
+<app-category-filter></app-category-filter>
+
 <div class="section cc-product-detail">
-    <div class="product-image"></div>
+  <div style="width:75%">
+    <div class="image-grid">
+      <div class="product-image"></div>
+      <div class="product-image"></div>
+      <div class="product-image"></div>
+      <div class="product-image"></div>
+
+    </div>
+    <div class="row">
+      <div class='thumbnail-small'></div>
+      <div class='thumbnail-small'></div>
+
+      <div class='thumbnail-small'></div>
+      <div class='thumbnail-small'></div>
+      <div class='thumbnail-small'></div>
+
+    </div>
+  </div>
+   
     <div class="product-details-wrap">
-      <div class="product-detail-main-details">
-        <h1 class="product-detail-name">Jordan 13 shoes</h1>
-        <div class="product-detail-price">$140.99</div>
-        <div class="paragraph-light">basic description of the item</div>
+      <div class="category-price">
+        <p class="paragraph-light">Men's athletic sneaker</p>
+        <p class="paragraph-small" style="font-weight: bold;">$299.99</p>
       </div>
-      <div class="divider cc-dark-divider"></div>
-      <div class="product-informations">
-        <ul class="w-list-unstyled">
-          <li class="list-item">
-            <div class="paragraph-light">Dimensions</div>
-            <div class="product-detail-measurement">
-              <div></div>
-              <div class="product-detail-unit-text cc-middle-text">in x</div>
-              <div></div>
-              <div class="product-detail-unit-text cc-middle-text">in x</div>
-              <div></div>
-              <div class="product-detail-unit-text">in</div>
-            </div>
-          </li>
-          <li class="list-item">
-            <div class="paragraph-light">Weight</div>
-            <div class="product-detail-measurement">
-              <div></div>
-              <div class="product-detail-unit-text">oz</div>
-            </div>
-          </li>
-        </ul>
+      <div class='title'>
+        <h3>Air Jordan 1 "Off White"</h3>
       </div>
-      <div class="divider"></div>
-      <form data-node-type="commerce-add-to-cart-form" class="w-commerce-commerceaddtocartform"><label for="quantity-3f8ec8b146ca9ed4b1d9cb3082673eb" class="label">Sizes</label>
-        <div class="product-detail-cta-wrap"><input type="number" id="quantity-3f8ec8b146ca9ed4b1d9cb3082673eb9" name="commerce-add-to-cart-quantity-input" min="1" class="w-commerce-commerceaddtocartquantityinput text-field cc-quantity-field" value="1"><input type="submit" value="Add To Cart" class="w-commerce-commerceaddtocartbutton button"></div>
-      </form>
-      <div class="divider"></div>
-      <div class="add-to-cart">
-        <form data-node-type="commerce-add-to-cart-form" class="w-commerce-commerceaddtocartform"><label for="quantity-3f8ec8b146ca9ed4b1d9cb3082673eb" class="label">Quantity</label>
-          <div class="product-detail-cta-wrap"><input type="number" id="quantity-3f8ec8b146ca9ed4b1d9cb3082673eb9" name="commerce-add-to-cart-quantity-input" min="1" class="w-commerce-commerceaddtocartquantityinput text-field cc-quantity-field" value="1"><input type="submit" value="Add To Cart" class="w-commerce-commerceaddtocartbutton button"></div>
-        </form>
-        <div style="display:none" class="w-commerce-commerceaddtocartoutofstock status-message">
-          <div>This product is out of stock.</div>
+        <p class="paragraph-small" style="font-weight: 400;">Select Size</p>
+        <div class="size-select">
+          <div class="option"><p>9</p></div>
+          <div class="option"><p>9</p></div>
+          <div class="option"><p>9</p></div>
+          <div class="option"><p>9</p></div>
+          <div class="option"><p>9</p></div>
+          <div class="option"><p>9</p></div>
+          <div class="option"><p>9</p></div>
+          <div class="option"><p>9</p></div>
         </div>
-        <div data-node-type="commerce-add-to-cart-error" style="display:none" class="w-commerce-commerceaddtocarterror">
-          <div class="w-add-to-cart-error-msg" data-w-add-to-cart-quantity-error="Product is not available in this quantity." data-w-add-to-cart-general-error="Something went wrong when adding this item to the cart.">Product is not available in this quantity.</div>
+        <p class="paragraph-small" style="font-weight: 400;">Color</p>
+        <mat-form-field>
+          <mat-label>Choose a Color</mat-label>
+          <mat-select>
+            <mat-option value="black">Black</mat-option>
+            <mat-option value="white">White</mat-option>
+            <mat-option value="royal blue">Royal blue</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+        <div class="divider"></div>
+         <p class="paragraph-small">
+           Shipping
+         </p>
+        <mat-radio-group class='radio-group' aria-label="Select an option">
+          <mat-radio-button value="Express">
+            <p>Express - $14.99</p>
+          </mat-radio-button>
+          <mat-radio-button value="Express">
+            <p>Standard - $7.99</p>
+          </mat-radio-button>
+          <mat-radio-button value="Express">
+            <p>Express - $14.99</p>
+          </mat-radio-button>
+        </mat-radio-group>
+        <div class="divider"></div>
+        <button class="button" mat-button>Add to Cart</button>
+        <div style="margin-top: 30px">
+          <p class="paragraph-small">The high-top sneaker comes dressed in familiar Red, White and Black Chicago Bulls-inspired color scheme. Its branded with OFF-WHITE for Nike tagging on the medial side, along with a unique Nike Swoosh logo and “AIR” branding on the midsole</p>
         </div>
-      </div>
+        
+
     </div>
   </div>
