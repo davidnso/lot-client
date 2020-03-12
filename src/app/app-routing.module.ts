@@ -9,6 +9,7 @@ import { DetailsComponent } from './details/details.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CreateStoreComponent } from './create-store/create-store.component';
 import { LotComponent } from './lot/lot.component';
+import { BuilderComponent } from './lot/dashboards/store/components/builder/builder.component';
 
 
 const routes: Routes = [
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: LotComponent
+  },
+  {
+    path: 'create-listing',
+    component: BuilderComponent
   }
 ];
 

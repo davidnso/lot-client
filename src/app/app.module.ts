@@ -32,6 +32,9 @@ import {MatRadioModule} from '@angular/material/radio';
 import { CreateStoreComponent } from './create-store/create-store.component';
 import { LotComponent } from './lot/lot.component';
 import { StoreComponent } from './lot/dashboards/store/store.component';
+import { BuilderComponent } from './lot/dashboards/store/components/builder/builder.component';
+import { LOTModule } from './lot/lot.module';
+import { CustomerComponent } from './lot/dashboards/customer/customer.component';
 
 
 @NgModule({
@@ -44,7 +47,9 @@ import { StoreComponent } from './lot/dashboards/store/store.component';
     AuthComponent,
     LandingComponent,
     StoreBuilderComponent,
+    BuilderComponent,
     StoreComponent,
+    PlugComponent,
     BrowseComponent,
     LikeComponent,
     FeedbackComponent,
@@ -54,9 +59,10 @@ import { StoreComponent } from './lot/dashboards/store/store.component';
     CheckoutComponent,
     FormComponent,
     OrderSummaryComponent,
-    PlugComponent,
     CreateStoreComponent,
-    LotComponent
+    LotComponent,
+
+    CustomerComponent,
   ],
   imports: [
     BrowserModule,
