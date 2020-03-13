@@ -11,17 +11,16 @@
   }
   
   .container {
-    height: 400px;
+    // height: 400px;
   }
   
   .div-block {
-    width: 270px;
-    height: 300px;
+    width: 330px;
+    height: 450px;
   }
   
   .image-container {
-    height: 250px;
-    border-radius: 5px;
+    height: 400px;
     margin-bottom: 4px;
     background-image: url('../../../assets/items.png');
     background-repeat: no-repeat;
@@ -40,16 +39,20 @@
   .left-content{
       justify-self: start;
       height: 16px;
-      p{
+      .main{
         padding:0px;
         margin:0px;
+        font-size: 12px;
         color: black;
       }
 
   }
 
   .sub-content{
-      color: #C4C4C4;
+    padding:0px;
+    margin:0px;
+    font-size: 12px;
+      color: rgb(202, 202, 202);
   }
   
 .price {
@@ -60,8 +63,10 @@
       justify-self: end;
       height: 12px;
       p{
+        font-size: 12px;
         padding:0px;
         margin:0px;
       }
 
   }
+
