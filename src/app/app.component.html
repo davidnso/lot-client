@@ -22,9 +22,22 @@
       <span class="navigation-text">
         <a class="medium" href="/browse">Browse</a></span>
       <input class="search-bar"/>
-      <span class="navigation-text"><a href="/auth" class="medium">Login</a></span>
+      
+      <span *ngIf="user === null; else elseBlock" class="navigation-text"><a href="/auth" class="medium">Login</a></span>
+      <ng-template #elseBlock>
+        <span class="account-dropdown">
+          <img style="width: 20px" (click)="toggleDropdown()" src='../assets/account_icon.png'/>
+          <div id="myDropdown" [ngClass]="{'dropdown-content': true, 'active': dropdownActive}">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </span>
+      </ng-template>
       <span class="navigation-text">
-        <a href="/cart" class="medium">Cart</a></span>
+        <a href="/cart" class="medium" >Cart</a>
+        
+      </span>
     </div>
   </div>
 </div>

@@ -3,7 +3,8 @@
     <div class="title">
       <span>
         <h2>Buy and Sell on the LOT</h2>
-        <button mat-button>Create an Account</button>
+        <button mat-button>
+          <a href="/auth" style="color: white;">Create an Account</a> </button>
       </span>
     </div>
     <div class="description">
@@ -22,20 +23,23 @@
     <h3 class="heading">Shop By Category</h3>
   </div>
   <div class="content-grid">
+    <a href="/browse?category=shoes">
       <div class="category footwear">
         <div class="wrapper">
           <img class='category-image' src="../../assets/balency.png" alt="">
           <p class="paragraph-small">Footwear</p>  
         </div>
-       
       </div>
-      <div class="category streetwear">
-        <div  class="wrapper">
-          <img class='category-image' src="../../assets/hoodie.png" alt="">
-          <p class="paragraph-small">Streetwear</p>
+    </a>
+      <a href="/browse?category=apparel">
+        <div class="category streetwear">
+          <div  class="wrapper">
+            <img class='category-image' src="../../assets/hoodie.png" alt="">
+            <p class="paragraph-small">Streetwear</p>
+          </div>
         </div>
-        
-      </div>
+      </a>
+     <a href="/browse?category=accessories">
       <div class="category accessories">
         <div class="wrapper">
           <img class='category-image' src="../../assets/baseball-hat.png" alt="">
@@ -44,6 +48,8 @@
         </div>
         
       </div>
+    </a>
+      
 </div>
 </div>
 <div class="feature-container">

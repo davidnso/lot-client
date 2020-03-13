@@ -4,14 +4,14 @@
             <div class="auth-container">
                 <mat-form-field class="form-input">
                     <mat-label>Username </mat-label>
-                    <input  matInput style="width: 200px" />
+                    <input required minlength="4" matInput style="width: 200px" />
                   </mat-form-field>  
                   <mat-form-field>
                     <mat-label>password </mat-label>
-                    <input matInput style="width: 200px" />
+                    <input matInput required minlength="4" type="password" style="width: 200px" />
                   </mat-form-field> 
                   <div class="button-wrapper">
-                    <button class="signIn" mat-button>Sign In</button>
+                    <button class="signIn" mat-button (click)="authenticateUser()">Sign In</button>
                   </div>
                   
                   <a href='/'><p>Forgot your password?</p></a>
