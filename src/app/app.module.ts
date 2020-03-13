@@ -39,6 +39,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import { CategoryFilterComponent } from './shared/category-filter/category-filter.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 @NgModule({
@@ -69,6 +70,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CustomerComponent,
 
     CategoryFilterComponent,
+
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
