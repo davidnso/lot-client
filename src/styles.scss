@@ -53,6 +53,12 @@ input {
 a{
     text-decoration: none;
     transition: all 0.2s ease-in;
+    p{
+        text-decoration: none;
+    }
+}
+div{
+    font-size: 12px;
 }
 
 a.medium{

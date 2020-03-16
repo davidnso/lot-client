@@ -10,6 +10,10 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { CreateStoreComponent } from './create-store/create-store.component';
 import { LotComponent } from './lot/lot.component';
 import { BuilderComponent } from './lot/dashboards/store/components/builder/builder.component';
+import { StoreComponent } from './lot/dashboards/store/store.component';
+import { CustomerComponent } from './lot/dashboards/customer/customer.component';
+import { BuyOrdersComponent } from './lot/dashboards/store/components/buy-orders/buy-orders.component';
+import { BuyOrderDetailsComponent } from './lot/dashboards/store/components/buy-orders/components/buy-order-details/buy-order-details.component';
 
 
 const routes: Routes = [
@@ -45,7 +49,36 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: LotComponent
+    component: LotComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'user',
+        pathMatch: 'full'
+      },
+      {
+        path: 'store',
+        component: StoreComponent,
+      },
+      {
+        path: 'user',
+        component: CustomerComponent
+      },
+      {
+        path: 'buy-orders',
+        component: BuyOrdersComponent,
+        children: [
+          {
+            path: 'details',
+            component: BuyOrderDetailsComponent
+          },
+        ]
+      },
+      {
+        path: 'buy-details',
+        component: BuyOrderDetailsComponent
+      }
+    ]
   },
   {
     path: 'create-listing',

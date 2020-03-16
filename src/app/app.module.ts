@@ -40,6 +40,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { CategoryFilterComponent } from './shared/category-filter/category-filter.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FooterComponent } from './shared/footer/footer.component';
+import { BuyOrdersComponent } from './lot/dashboards/store/components/buy-orders/buy-orders.component';
+import { BuyOrderDetailsComponent } from './lot/dashboards/store/components/buy-orders/components/buy-order-details/buy-order-details.component';
 
 
 @NgModule({
@@ -72,6 +74,10 @@ import { FooterComponent } from './shared/footer/footer.component';
     CategoryFilterComponent,
 
     FooterComponent,
+
+    BuyOrdersComponent,
+
+    BuyOrderDetailsComponent
   ],
   imports: [
     BrowserModule,

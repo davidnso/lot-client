@@ -28,9 +28,11 @@
         <span class="account-dropdown">
           <img style="width: 20px" (click)="toggleDropdown()" src='../assets/account_icon.png'/>
           <div id="myDropdown" [ngClass]="{'dropdown-content': true, 'active': dropdownActive}">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <a href="/dashboard/user">Account</a>
+            <a href="/plug">The Plug</a>
+            <a href="/dashboard/store">Shop</a>
+            <a href="#">Help</a>
+            <a href="/" (click)="signOut()">Sign out</a>
           </div>
         </span>
       </ng-template>

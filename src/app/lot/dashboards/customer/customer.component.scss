@@ -1,3 +1,21 @@
+.category-filter{
+  width: 60%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  margin: auto;
+  font-weight: bold;
+ p{
+  font-size: small;
+  color: black
+ }
+}
+
 .profile-wrapper{
     background-color: white;
     width: 95%;

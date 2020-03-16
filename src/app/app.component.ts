@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -15,12 +15,23 @@ export class AppComponent {
   };
 
   dropdownActive = false;
-  constructor() {}
+  constructor( private eRef: ElementRef) {}
 
 
   toggleDropdown(){
     this.dropdownActive = !this.dropdownActive;
     console.log(this.dropdownActive);
+  }
+
+  @HostListener('document:click', ['$event'])
+  clickout(event){
+    if(!this.eRef.nativeElement.contains(event.target)){
+      console.log('clicked outside')
+    }
+  }
+
+  signOut(){
+    this.user = null;
   }
 
 }

@@ -22,6 +22,8 @@ export class AuthComponent implements OnInit {
     // Create remaining form controls....
   });
 
+  registrationComplete = false;
+
   continueClicked: boolean = false;
   constructor(private router: Router) {}
 
@@ -43,5 +45,9 @@ export class AuthComponent implements OnInit {
       // })
       this.router.navigate(['']);
     }
+  }
+
+  registerUser(){
+    
   }
 }

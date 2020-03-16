@@ -1,9 +1,19 @@
+<div style="width:100%;border-bottom: 1px solid #cecece;">
+    <div class="category-filter">
+      <a href="/dashboard/user">
+        <p class="paragraph-small">Dashboard</p>
+      </a>
+      <a href="/dashboard/feedback">
+        <p class="paragraph-small">Feedback</p>
+      </a>
+    </div>
+  </div>
 <div class="profile-wrapper">
     <span>
         <img class="profile-image" src="../../../../assets/profile-pic.png"/>
         <h6>Michael Nsoesie</h6>
         <p class="paragraph-small">Mnsoes1</p>
-        <button class="edit-button" mat-button>Edit Button</button>
+        <button class="edit-button" mat-button>Edit Profile</button>
     </span>
 </div>
 <div class="account-info">
@@ -52,11 +62,15 @@
             <p class="paragraph-light">Customers also bought..</p>
         </div>
         <div class="suggestion-wrapper">
-            <span>
-                <img class="item-img-medium" src="../../../../assets/paul-volkmer-AZf7DL-8Qhk-unsplash.jpg" />
-                <p class="paragraph-small">Shoe Name</p>
-                <p class="paragraph-light">$00.00</p>
-            </span>
+            <a href="/details">
+                <span style="cursor:pointer">
+                    <img class="item-img-medium" src="../../../../assets/paul-volkmer-AZf7DL-8Qhk-unsplash.jpg" />
+                    <p class="paragraph-small">Shoe Name</p>
+                    <p class="paragraph-light">$00.00</p>
+                </span>
+            </a>
+            
         </div>
     </div>
 </div>
+<app-footer></app-footer>
