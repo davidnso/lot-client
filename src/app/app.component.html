@@ -25,16 +25,7 @@
       
       <span *ngIf="user === null; else elseBlock" class="navigation-text"><a href="/auth" class="medium">Login</a></span>
       <ng-template #elseBlock>
-        <span class="account-dropdown">
-          <img style="width: 20px" (click)="toggleDropdown()" src='../assets/account_icon.png'/>
-          <div id="myDropdown" [ngClass]="{'dropdown-content': true, 'active': dropdownActive}">
-            <a href="/dashboard/user">Account</a>
-            <a href="/plug">The Plug</a>
-            <a href="/dashboard/store">Shop</a>
-            <a href="#">Help</a>
-            <a href="/" (click)="signOut()">Sign out</a>
-          </div>
-        </span>
+        <app-account-options class="navigation-text"></app-account-options>
       </ng-template>
       <span class="navigation-text">
         <a href="/cart" class="medium" >Cart</a>

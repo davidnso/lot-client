@@ -41,7 +41,14 @@ import { CategoryFilterComponent } from './shared/category-filter/category-filte
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FooterComponent } from './shared/footer/footer.component';
 import { BuyOrdersComponent } from './lot/dashboards/store/components/buy-orders/buy-orders.component';
+import { HttpClientModule } from '@angular/common/http';
+// tslint:disable-next-line: max-line-length
 import { BuyOrderDetailsComponent } from './lot/dashboards/store/components/buy-orders/components/buy-order-details/buy-order-details.component';
+import { DialogComponent } from './shared/dialog/dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ConfirmationComponent } from './create-store/components/confirmation/confirmation.component';
+import { LoginDialogComponent } from './shared/login-dialog/login-dialog.component';
+import { AccountOptionsComponent } from './shared/menus/account-options/account-options.component';
 
 
 @NgModule({
@@ -77,7 +84,20 @@ import { BuyOrderDetailsComponent } from './lot/dashboards/store/components/buy-
 
     BuyOrdersComponent,
 
-    BuyOrderDetailsComponent
+    BuyOrderDetailsComponent,
+
+    DialogComponent,
+
+    ConfirmationComponent,
+    
+    LoginDialogComponent,
+    
+    AccountOptionsComponent
+  ],
+  entryComponents: [
+    DialogComponent,
+    ConfirmationComponent,
+    LoginDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -95,7 +115,9 @@ import { BuyOrderDetailsComponent } from './lot/dashboards/store/components/buy-
     MatPaginatorModule,
     MatButtonToggleModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
