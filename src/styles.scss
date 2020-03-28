@@ -20,7 +20,7 @@ body{
 }
 .paragraph-light {
     opacity: 0.6;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 0px;
     text-transform: none;
 }
@@ -33,10 +33,13 @@ body{
     text-transform: none;
 }
 .paragraph-small {
-    font-size: 14px;
+    font-size: 12px;
+}
+.dialog-content{
+    text-align: center;
 }
 .paragraph-tiny {
-    font-size: 12px;
+    font-size: 10px;
     line-height: 20px;
 }
 .label {
@@ -57,6 +60,7 @@ a{
         text-decoration: none;
     }
 }
+a:visited { text-decoration: none;}
 div{
     font-size: 12px;
 }

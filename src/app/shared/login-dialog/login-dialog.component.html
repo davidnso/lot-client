@@ -1,0 +1,25 @@
+<div class="dialog-content" >
+    <h1 mat-dialog-title>The LOT</h1>
+    <br/>
+    <mat-dialog-content class="mat-typography">
+      <p>Hi there!</p>
+      <p>It seems like you need to be signed in to continue on this page</p>
+      <p>
+        create an account today or sign in today!
+      </p>
+    </mat-dialog-content>
+  </div>
+  <br/>
+  <br/>
+  <mat-dialog-actions align="center">
+    <button mat-button mat-dialog-close>
+      <a href="/auth?register=false&redirectTo=create-store">Sign In</a> 
+      </button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial >
+     <a href="/auth?register=true" style="color: white">
+      Create Account
+     </a> 
+    </button>
+    
+  </mat-dialog-actions>
+  
