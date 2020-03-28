@@ -1,0 +1,30 @@
+<div class="dialog-content">
+    <h1 mat-dialog-title>The LOT</h1>
+    <br/>
+    <mat-dialog-content class="mat-typography">
+      <h2>Hi {{ data.owner }}!</h2>
+      <h4>Your store "{{data.name}}" has been successfully created</h4>
+      <p>
+        At the LOT we value each and every customer and appreciat you joining our
+        growing community!!
+      </p>
+      <p>What's next?</p>
+    </mat-dialog-content>
+  </div>
+  <br/>
+  <br/>
+  <mat-dialog-actions align="center">
+    <button mat-button mat-dialog-close>
+      <a href="/dashboard/user">Go to Account</a> 
+      </button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="true" cdkFocusInitial >
+     <a href="/dashboard/store" style="color: white">
+      Manage Store
+     </a> 
+    </button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>
+      <a href="/dashboard">Visit Store
+      </a>  
+      </button>
+  </mat-dialog-actions>
+  
