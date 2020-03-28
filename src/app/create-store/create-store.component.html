@@ -1,39 +1,41 @@
 <div class="wrapper">
     <div class="left-container">d</div>
+    <form [formGroup]="createStoreForm" (ngSubmit)="registerNewStore()">
     <div class="right-container">
-        <div class="container-content">
-            <h5>What's the name of your store? </h5>
-            <mat-form-field class="form-input">
-                <mat-label>Store name </mat-label>
-                <input matInput style="width: 200px" />
-              </mat-form-field>  
-              <h5>Where are you doing business?</h5>
-              <br/>
-              <mat-checkbox>Same as Contact Address</mat-checkbox>
-              <br/>
 
-              <mat-form-field class="form-input">
-                <mat-label>Address </mat-label>
-                <input  matInput style="width: 200px" />
-              </mat-form-field>  
-              <mat-form-field class='form-input'>
-                <mat-label>Apartment/Suite </mat-label>
-                <input matInput style="width: 200px" />
-              </mat-form-field> 
-              <br/>
-              <mat-form-field class='form-input xs'>
-                <mat-label>City </mat-label>
-                <input matInput />
-              </mat-form-field> 
+        <div class="container-content">
+          <h5>What's the name of your store? </h5>
+          <mat-form-field class="form-input">
+              <mat-label>Store name </mat-label>
+              <input formControlName="name" matInput style="width: 200px" />
+            </mat-form-field>  
+            <h5>Where are you doing business?</h5>
             <br/>
-              <mat-form-field class='form-input xs'>
-                <mat-label>Zip Code </mat-label>
-                <input matInput />
-              </mat-form-field>
-              <mat-form-field class='form-input xs'>
-                <mat-label>State </mat-label>
-                <select matNativeControl required>
-                    <option value="AL">Alabama</option>
+            <mat-checkbox>Same as Contact Address</mat-checkbox>
+            <br/>
+
+            <mat-form-field class="form-input">
+              <mat-label>Address </mat-label>
+              <input formControlName="streetAddress" matInput style="width: 200px" />
+            </mat-form-field>  
+            <mat-form-field class='form-input'>
+              <mat-label>Apartment/Suite </mat-label>
+              <input formControlName="apartment" matInput style="width: 200px" />
+            </mat-form-field> 
+            <br/>
+            <mat-form-field class='form-input xs'>
+              <mat-label>City </mat-label>
+              <input formControlName="city" matInput />
+            </mat-form-field> 
+          <br/>
+            <mat-form-field class='form-input xs'>
+              <mat-label>Zip Code </mat-label>
+              <input formControlName="zipCode" matInput />
+            </mat-form-field>
+            <mat-form-field class='form-input xs'>
+              <mat-label>State </mat-label>
+              <select formControlName="state" matNativeControl required>
+                  <option value="AL">Alabama</option>
 <option value="AK">Alaska</option>
 <option value="AZ">Arizona</option>
 <option value="AR">Arkansas</option>
@@ -84,18 +86,22 @@
 <option value="WV">West Virginia</option>
 <option value="WI">Wisconsin</option>
 <option value="WY">Wyoming</option>
-                  </select>
-              </mat-form-field> 
-              <br/>
-              <mat-form-field class='form-input'>
-                <mat-label>Phone Number </mat-label>
-                <input matInput />
-              </mat-form-field>
-              <br/>
-        </div>
-        <div class="button-container">
-            <button class="black-button" mat-button>Create Store</button>
+                </select>
+            </mat-form-field> 
+            <br/>
+            <mat-form-field class='form-input'>
+              <mat-label>Phone Number </mat-label>
+              <input formControlName="phoneNumber" matInput />
+            </mat-form-field>
+            <br/>
+      </div>
+      <div class="button-container">
+          <button class="black-button" mat-button type="submit">Create Store</button>
 
-        </div>
+      </div>
+
+       
     </div>
+  </form>
+
 </div>
