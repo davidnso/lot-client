@@ -27,6 +27,10 @@
           <div class="button-wrapper">
             <button class="signIn" mat-button type="submit">Sign In</button>
           </div>
+          <div *ngIf='showWarning === true'>
+            <p class='hidden-message' style="color: rgb(219, 83, 83);">Username or password is incorrect</p>
+            <p class='hidden-message' style="color: rgb(219, 83, 83);">Try again</p>
+          </div>
         </form>
 
         <a href="/"><p>Forgot your password?</p></a>

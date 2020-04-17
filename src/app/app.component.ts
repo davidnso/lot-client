@@ -1,4 +1,5 @@
 import { Component, HostListener, ElementRef, OnInit } from '@angular/core';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ export class AppComponent implements OnInit {
 
   user = null;
   
-  constructor(private eRef: ElementRef) {}
+  constructor(private eRef: ElementRef, private auth: AuthService) {
+    this.user = auth.currentUserValue;
+  }
   ngOnInit(): void {
     this.user =
       localStorage.getItem('user') !== null

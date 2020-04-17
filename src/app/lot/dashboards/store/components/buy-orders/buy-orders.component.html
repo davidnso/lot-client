@@ -100,61 +100,38 @@
                           </mat-form-field>
                     </div>
                     <div class="results">Results: # ( 1 - # )</div>
-                    <div style="min-height: 800px;" >
-                        <table class="tg">
-                            <tr>
-                                <th class="table-col"></th>
-                              <th class="table-col">Date</th>
-                              <th class="table-col">Item</th>
-                              <th class="table-col xl">Description</th>
-                              <th class="table-col">Asking Price</th>
-                              <th class="table-col">Views</th>
-                              <th class="table-col"></th>
-                            </tr>
-                            <tr class='card' (click)="navigateToDetails()">
-                                <td class="table-data"></td>
-                              <td class="table-data">
-                                <p class="paragraph-small">02/27/2020</p>
-                               </td>
-                              <td class="table-data img">
-                                  <img src="../../../../../../assets/camilla-carvalho-Y9dcQpOIMHQ-unsplash.jpg" />
-                              </td>
-                              <td class="table-data">
-                                  <p class="paragraph-small blue">Name of item</p>
-                                  <div class="status-card">Active</div>
-                                  <p class="paragraph-small">Color</p>
-                                    <p class="paragraph-small">Size</p>
-                              </td>
-                              <td class="table-data">
-                                <p class="paragraph-small">$129.99</p>
+                    <div style="min-height: 800px; margin-top: 50px;" >
+                      <a href="/dashboard/buy-details">
+                        
+                        <div class='card-wrapper' *ngFor="let order of buyOrders">
+                          <div style="display: flex; flex-direction: row; margin: 5px 5px;">
+                            <div class="icon-generic">
+                             <p>
+                              HH
+                             </p> 
+                            </div>
+                            <span><p class="paragraph-light floor">
+                              {{order.username}}'s looking for...
+                            </p></span>
+                          </div>
+                          <div class="card-container">
+                            <div class="card-item date">
+                              <p>Feb.29 2020</p> </div>
+                              <!-- TODO: Fix dynamic image lazy loading -->
+                              <div class="card-item image">
+                                <img class="image" src="https://stockx-360.imgix.net/adidas-Yeezy-Boost-350-V2-Cinder/Images/adidas-Yeezy-Boost-350-V2-Cinder/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1585357645&w=1000"/>
+                              </div>
+                            <div class="card-item name">
+                              <p>{{order.indexItem.name}}</p>
+                              <div>Active</div>
+                            </div>
+                            <div class="card-item" >${{order.price}}</div>
+                            <!-- <div  class="card-item">Views</div> -->
 
-                              </td>
-                              <td class="table-data">
-                                <p class="paragraph-small">12</p>
-
-                              </td>
-                              <td class="table-data"></td>
-                              
-                            </tr>
-                            <tr class='card'>
-                                <td class="table-data"></td>
-
-                                <td class="table-data">02/27/2020</td>
-                                <td class="table-data">
-                                    <img />
-                                </td>
-                                <td class="table-data">
-                                    <p class="paragraph-small blue">Vapor Max Something's and  kbvkjbdf ohnwhjd bjudhsb jlwarhb</p>
-                                    <div class="status-card">Active</div>
-                                    <p class="paragraph-small">Color</p>
-                                    <p class="paragraph-small">Size</p>
-                                </td>
-                                <td class="table-data">12</td>
-                                <td class="table-data">$00.00</td>
-                                <td class="table-data"></td>
-                                
-                              </tr>
-                          </table>
+                          </div>
+                        </div>
+                      </a>
+                        
                     </div>
                 </div>
             </div>

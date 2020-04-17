@@ -10,18 +10,72 @@
   </div>
 <div class="profile-wrapper">
     <span>
-        <img class="profile-image" src="../../../../assets/profile-pic.png"/>
-        <h6>Michael Nsoesie</h6>
-        <p class="paragraph-small">Mnsoes1</p>
+        <img *ngIf="user.profileImgUrl; else elseBlock" class="profile-image" src="../../../../assets/profile-pic.png"/>
+        <ng-template #elseBlock>
+            <div class="profile-image generic">
+                <h1>{{initials}}</h1>
+            </div>
+        </ng-template>
+        <h6>{{user.name}}</h6>
+        <p class="paragraph-small">{{user.username}}</p>
         <button class="edit-button" mat-button>Edit Profile</button>
     </span>
 </div>
 <div class="account-info">
-    <div style="width:75%">
+    <div style="width:95%">
         <div style="width: 90%; margin: auto">
             <mat-tab-group>
                 <mat-tab label="Orders">
                     <div style="margin-top:50px">
+                        <div *ngIf="orders!==null; else noOrderBlock">
+                            <table class="tg">
+                                <tr>
+                                  <th class="table-col">Date</th>
+                                  <th class="table-col">Item</th>
+                                  <th class="table-col xl">Description</th>
+                                  <th class="table-col">Quantity</th>
+                                  <th class="table-col">Total</th>
+                                  <th class="table-col"></th>
+                                </tr>
+                                <tr>
+                                  <td class="table-data">02/27/2020</td>
+                                  <td class="table-data">
+                                      <img />
+                                  </td>
+                                  <td class="table-data">
+                                      <p class="paragraph-small">Name of item</p>
+                                      <p class="paragraph-small">Color</p>
+                                      <p class="paragraph-small">Size</p>
+                                      <p class="paragraph-small">Price</p>
+                                  </td>
+                                  <td class="table-data">12</td>
+                                  <td class="table-data">$00.00</td>
+                                  <td class="table-data"></td>
+                                  
+                                </tr>
+                              </table>
+                        </div>
+                        <ng-template #noOrderBlock>
+                            <div class="content-container">
+                                <div class="content">
+                                    <div style='color:rgb(142, 58, 190)'>
+                                        <fa-icon [icon]='shoppingCartIcon' size='lg'></fa-icon>
+                                    </div>
+                                    <h2>Hey! It looks like you don't have any orders</h2>
+                                    <span class="buttonRow">
+                                        <button mat-flat-button color="primary">Browse</button>
+                                        <button mat-flat-button>My Cart</button>
+                                    </span>
+                                </div>
+                            
+                            </div>
+                        </ng-template>
+                        
+                    </div>
+                    
+                </mat-tab>
+                <mat-tab label="Cancellations">
+                    <div *ngIf="orders!==null; else noCancellationBlock">
                         <table class="tg">
                             <tr>
                               <th class="table-col">Date</th>
@@ -49,15 +103,74 @@
                             </tr>
                           </table>
                     </div>
-                    
+                    <ng-template #noCancellationBlock>
+                        <div class="content-container">
+                            <div class="content">
+                                <div style='color:rgb(142, 58, 190)'>
+                                    <fa-icon [icon]='fileIcon' size='lg'></fa-icon>
+                                </div>
+                                <h2>Hey! There are no pending or active cancellations right now</h2>
+                                <span class="buttonRow">
+                                    <button mat-flat-button color="primary">Browse</button>
+                                    <button mat-flat-button>My Cart</button>
+                                </span>
+                            </div>
+                        
+                        </div>
+                    </ng-template>
                 </mat-tab>
-                <mat-tab label="Cancellations"></mat-tab>
-                <mat-tab label="Buy Orders"></mat-tab>
+                <mat-tab label="Buy Orders">
+                    <div *ngIf="orders!==null; else noBuyOrdersBlock">
+                        <table class="tg">
+                            <tr>
+                              <th class="table-col">Date</th>
+                              <th class="table-col">Item</th>
+                              <th class="table-col xl">Description</th>
+                              <th class="table-col">Quantity</th>
+                              <th class="table-col">Total</th>
+                              <th class="table-col"></th>
+                            </tr>
+                            <tr>
+                              <td class="table-data">02/27/2020</td>
+                              <td class="table-data">
+                                  <img />
+                              </td>
+                              <td class="table-data">
+                                  <p class="paragraph-small">Name of item</p>
+                                  <p class="paragraph-small">Color</p>
+                                  <p class="paragraph-small">Size</p>
+                                  <p class="paragraph-small">Price</p>
+                              </td>
+                              <td class="table-data">12</td>
+                              <td class="table-data">$00.00</td>
+                              <td class="table-data"></td>
+                              
+                            </tr>
+                          </table>
+                    </div>
+                    <ng-template #noBuyOrdersBlock>
+                        <div class="content-container">
+                            <div class="content">
+                                <div style='color:rgb(142, 58, 190)'>
+                                    <fa-icon [icon]='shippingIcon' size='lg'></fa-icon>
+                                </div>
+                                <h2>Hey! You don't have any orders in the plug right now</h2>
+                                <h2>Make one today!!</h2>
+                                <span class="buttonRow">
+                                    <button mat-flat-button color="primary">The Plug</button>
+                                </span>
+                            </div>
+                        
+                        </div>
+                    </ng-template>
+                </mat-tab>
             </mat-tab-group>
         </div>
         
     </div>
-    <div style="width: 20%; ">
+    <!-- TODO: Implement recently viewed or suggestions on what customers should view. 
+    When complete change width of left container to 80% -->
+    <!-- <div style="width: 20%; ">
         <div class="suggestion-title">
             <p class="paragraph-light">Customers also bought..</p>
         </div>
@@ -71,6 +184,6 @@
             </a>
             
         </div>
-    </div>
+    </div> -->
 </div>
 <app-footer></app-footer>

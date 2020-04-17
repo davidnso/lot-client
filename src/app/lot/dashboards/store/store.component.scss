@@ -35,6 +35,10 @@
 .paragraph-light-heading {
   margin-right: 10px;
 }
+
+::ng-deep .mat-tab-body{
+  min-height: 600px;
+}
 .order-summary-card {
   display: flex;
   flex-direction: row;
@@ -169,12 +173,12 @@ p {
 
 .graph-container {
   height: 80%;
-  width: 80%;
+  width: 90%;
   margin: auto;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("../../../../assets/chart.png");
+ // background-image: url("../../../../assets/chart.png");
 }
 
 .store-info {
@@ -381,4 +385,48 @@ col-img-wrapper{
 }
 .item-desc{ 
   color: #4383E2
+}
+
+//NO CONTENT STYLES
+
+.content-container{
+  .content{
+      width: 500px;
+      margin: auto;
+      margin-top: 100px;
+      position: relative;
+      text-align: center;
+      font-family: sans-serif;
+      vertical-align: middle;
+      animation: fade-in 1s;
+      img{
+          height: 100px;
+          width: 100px;
+      }
+      h2 {
+          font-size: large;
+          margin-top: 30px;
+        }
+        p{
+            margin-top: 20px;
+        }
+      .buttonRow{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        button{
+          width: 130px;
+        }
+      }
+  }
+  
+}
+
+@keyframes fade-in{
+  0%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 1;
+  }
 }

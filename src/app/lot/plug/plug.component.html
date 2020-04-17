@@ -1,61 +1,207 @@
-<div class="banner">
-    <h5 style="margin:0px">The Plug</h5>
-    <p class="paragraph-light">Lock in a deal on whatever you're looking for</p>
-</div>
-<div>
-    <div class="form-wrapper">
-        <div class="row">
-            <span (click)="swapIndex(1)">
-                <img src="../../../../../../assets/shoe.png" class="large-button"/>
-                <p class="paragraph-light">Footwear</p>
-            </span>
-            <span (click)="swapIndex(2)">
-                <img src="../../../../../../assets/shirt.png" class="large-button"/>
-                <p class="paragraph-light">Apparel</p>
-            </span>
-            <span (click)="swapIndex(3)">
-                <img src="../../../../../../assets/watch.png" class="large-button"/>
-                <p class="paragraph-light">Accessories</p>
-            </span>
-        </div>
-        <div class="row"  *ngIf="index === 0 || index === null || index === undefined">Please select a Category</div>
-        <div class="row"  *ngIf="index === 1">
-            <span>
-                <div class="medium-button"></div>
-                <p class="paragraph-light">Loafers</p>
-            </span>
-            <span>
-                <div class="medium-button"></div>
-                <p class="paragraph-light">Basketball</p>
-            </span>
-            <span>
-                <div class="medium-button"></div>
-                <p class="paragraph-light">Lifestyle</p>
-            </span>
-            <span>
-                <div class="medium-button"></div>
-                <p class="paragraph-light">Running</p>
-            </span>
-            <span>
-                <div class="medium-button"></div>
-                <p class="paragraph-light">Other</p>
-            </span>
-        </div>
-        <div class="row" *ngIf="index === 2">Apparel Selected</div>
-        <div class="row" *ngIf="index === 3">Accessories Selected</div>
-        <div class="s1 center">
-            <h6>Item name</h6>
-            <mat-form-field>
-                <mat-label>What's it called</mat-label>
-                <input matInput/>
-            </mat-form-field>
-        </div>
-        <div class="s1">
-
-            <div>
-                
-            </div>
-        </div>
-        
+<div style="min-height: 1000px;">
+  <div class="banner">
+    <div class="title">
+      <h2 style="margin:0px">The Plug</h2>
+      <p class="paragraph-light">Lock in a deal on whatever you're looking for</p>
     </div>
+  </div>
+  <div>
+      <br/>
+      <div class="button-row">
+          <button mat-button class='options'>New Ask</button>
+      </div>
+      <div class="feed-container">
+        <mat-tab-group>
+          <mat-tab label="Orders">
+            <!-- TODO: REMOVE REPEATED CODE -->
+            <div class="wrapper">
+              <div class="filter-container">
+                <div class="filter-heading">
+                  <h6>
+                    Orders
+                  </h6>
+                </div>
+                <div>
+                  <ul>
+                    <p class="paragraph-light filter">All orders</p>
+                    <p class="paragraph-light filter">Awaiting You</p>
+                    <p class="paragraph-light filter">Awaiting Seller</p>
+                    <p class="paragraph-light filter">Paid and Shipped</p>
+                    <div class="divider filter"></div>
+                                      </ul>
+                </div>
+              </div>
+              <div style="width: 100%;margin: auto;" *ngIf="buyOrders.length!==0; else buyOrderElseBlock">
+                <div class='card-wrapper' *ngFor="let order of buyOrders">
+                  <div style="display: flex; flex-direction: row; margin: 0px 5px;">
+                    <span></span>
+                    <span><p class="paragraph-light floor">
+                      {{order.pending}} offers pending
+                    </p></span>
+                  </div>
+                  <div class="card-container">
+                    <div class="card-item date">
+                      <p>Feb.29 2020</p> </div>
+                      <!-- TODO: Fix dynamic image lazy loading -->
+                      <div class="card-item image">
+                        <img class="image" src="https://stockx-360.imgix.net/adidas-Yeezy-Boost-350-V2-Cinder/Images/adidas-Yeezy-Boost-350-V2-Cinder/Lv2/img01.jpg?auto=format,compress&q=90&updated_at=1585357645&w=1000"/>
+                      </div>
+                    <div class="card-item name">
+                      <p>{{order.indexItem.name}}</p>
+                      <div>Active</div>
+                    </div>
+                    <div class="card-item" >${{order.price}}</div>
+                    <div class="card-item"></div>
+                    <!-- <div  class="card-item">Views</div> -->
+
+                  </div>
+                </div>
+              </div>
+              <ng-template #buyOrderElseBlock>
+                  <div style="width: 100%;" class="no-content">
+                      <fa-icon [icon]='commentIcon' size='2x'></fa-icon>
+                      <h5>It looks like you don't have any Asks.</h5>
+                      <h5>Create one today!</h5>
+                      <button mat-button>New Ask</button>
+                  </div>
+              </ng-template>            
+            </div>
+          
+          </mat-tab>
+          <mat-tab label="feed">
+            <div  *ngIf="buyOrders.length!==0; else buyOrderElseBlock">
+             <div class='feed-wrapper'>
+               <div class="selectable">
+                 <div class='item'>
+                   <span class="state">
+                   </span>
+                   <span class="details">
+                     <p class="paragraph-light">Ask #231232</p>
+                     <p class="paragraph-small">Givenchy Slides</p>
+                   </span>
+                   <span class='price'>
+                     <p class="paragraph-small">$200</p>
+                   </span>
+                 </div>
+               </div>
+               <div class="selectable">
+                 <div class="secondary-item">
+                   <div class="row">
+                    <span class="icon">
+                      <div class='icon-item'>
+                        <p>FC</p> </div>
+                    </span>
+                    <span class="icon">
+                      <div class='table-item'>
+                        <p>Foam city</p> </div>
+                    </span>
+                   </div>
+                   
+                 </div>
+               </div>
+               <div class="content">
+                 <div class='action-card'>
+                  <div class="details">
+                    <span>
+                      <div class="store-icon">
+                        <p>
+                          FC
+                        </p>
+                      </div>
+                    </span>
+                    <span>
+                      <p>Store Name Accepted this ask</p>
+                    </span>
+                  </div>
+                  <div class="divider"></div>
+                  <div>
+                    <p class="paragraph-light">Mar 9th</p>
+                  </div>
+                 </div>
+                 <div class='actions'>
+                   <p class="paragraph-small">
+                     Request Verification
+                   </p>
+                   <p class="paragraph-small">
+                    Buy
+                  </p>
+                  <p class="paragraph-small">
+                    Abandon Deal
+                  </p>
+                 </div>
+               </div>
+             </div>
+            </div>
+          <ng-template #buyOrderElseBlock>
+              <div class="no-content">
+                  <fa-icon [icon]='commentIcon' size='2x'></fa-icon>
+                  <h5>It looks like you don't have any Asks.</h5>
+                  <h5>Create one today!</h5>
+                  <button mat-button>New Ask</button>
+              </div>
+          </ng-template>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+  
+      
+    <!-- <div class="form-wrapper">
+      <div class="row">
+        <span (click)="swapIndex(1)">
+          <img src="../../../../../../assets/shoe.png" class="large-button" />
+          <p class="paragraph-light">Footwear</p>
+        </span>
+        <span (click)="swapIndex(2)">
+          <img src="../../../../../../assets/shirt.png" class="large-button" />
+          <p class="paragraph-light">Apparel</p>
+        </span>
+        <span (click)="swapIndex(3)">
+          <img src="../../../../../../assets/watch.png" class="large-button" />
+          <p class="paragraph-light">Accessories</p>
+        </span>
+      </div>
+      <div
+        class="row"
+        *ngIf="index === 0 || index === null || index === undefined"
+      >
+        Please select a Category
+      </div>
+      <div class="row" *ngIf="index === 1">
+        <span>
+          <div class="medium-button"></div>
+          <p class="paragraph-light">Loafers</p>
+        </span>
+        <span>
+          <div class="medium-button"></div>
+          <p class="paragraph-light">Basketball</p>
+        </span>
+        <span>
+          <div class="medium-button"></div>
+          <p class="paragraph-light">Lifestyle</p>
+        </span>
+        <span>
+          <div class="medium-button"></div>
+          <p class="paragraph-light">Running</p>
+        </span>
+        <span>
+          <div class="medium-button"></div>
+          <p class="paragraph-light">Other</p>
+        </span>
+      </div>
+      <div class="row" *ngIf="index === 2">Apparel Selected</div>
+      <div class="row" *ngIf="index === 3">Accessories Selected</div>
+      <div class="s1 center">
+        <h6>Item name</h6>
+        <mat-form-field>
+          <mat-label>What's it called</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </div>
+      <div class="s1">
+        <div></div>
+      </div>
+    </div> -->
+  </div>
+  
 </div>
+

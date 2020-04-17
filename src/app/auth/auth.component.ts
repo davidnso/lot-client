@@ -4,6 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from './auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../shared/dialog/dialog.component';
+import { first } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-auth',
@@ -15,6 +17,8 @@ export class AuthComponent implements OnInit {
     username: new FormControl(''),
     password: new FormControl('')
   });
+
+  showWarning:boolean = false ;
 
   registerForm = new FormGroup({
     name: new FormControl(''),
@@ -56,15 +60,33 @@ export class AuthComponent implements OnInit {
   }
 
   authenticateUser() {
+    this.showWarning = false;
     const username = this.loginForm.value.username;
     const password = this.loginForm.value.password;
     // if(username !== undefined && username !== null){
     const user = this.auth
       .login({ username, password })
-      .subscribe((response: any) => {
+      .pipe(first())
+      .subscribe(
+        (response: any) => {
         console.log(response);
         const parsedUser = JSON.stringify(response.user);
-        localStorage.setItem('user', parsedUser);
+        if(this.auth.currentUserValue){
+
+          this.route.queryParams.subscribe(params => {
+            if (params['redirectTo']) {
+              this.router.navigate([params['redirectTo']]);
+            }else{
+              const localUser = localStorage.getItem('user')
+              console.log('here in else block', localUser)
+              user!==undefined || user!== null ? this.router.navigate(['']): this.showWarning = true ;
+            }
+          });
+        }
+        
+      },
+      error => {
+
       });
     console.log(user);
     // }
@@ -72,13 +94,6 @@ export class AuthComponent implements OnInit {
       // localStorage.setItem('user', {
 
       // })
-      this.route.queryParams.subscribe(params => {
-        if (params['redirectTo']) {
-          this.router.navigate([params['redirectTo']]);
-        }else{
-          this.router.navigate(['']);
-        }
-      });
     }
   }
 

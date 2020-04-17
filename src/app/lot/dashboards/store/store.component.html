@@ -8,242 +8,282 @@
     </a>
   </div>
 </div>
-<div>
-  <h5>Dave's Sneakers</h5>
-</div>
-<div class="wrapper">
+<div *ngIf="activeOutlet != null; else noStoreBlock">
   <div>
-    <div class="columns w-row">
-      <div class="recent w-col w-col-6">
-        <div class="base-container">
-          <p class="paragraph-light-heading">Recent Orders</p>
-          <div class="divider"></div>
-          <div class="order-summary-card">
-            <div class="order-image-container"></div>
-            <div class="order-info-wrapper">
-              <div class="order-date">
-                <p class="paragraph-light">02261999</p>
-              </div>
-              <div class="order-summary-info">
-                <div>
-                  <p class="paragraph-light">Bought By</p>
-                  <p class="paragraph-small">David Nsoesie</p>
+    <h5>{{activeOutlet.name}}</h5>
+  </div>
+  <div class="wrapper">
+    <div>
+      <div class="columns w-row">
+        <div class="recent w-col w-col-6">
+          <div class="base-container">
+            <p class="paragraph-light-heading">Recent Orders</p>
+            <div class="divider"></div>
+            <div *ngIf="recentOrders; else noRecentOrdersBlock" class="order-summary-card">
+              <div class="order-image-container"></div>
+              <div class="order-info-wrapper">
+                <div class="order-date">
+                  <p class="paragraph-light">02261999</p>
                 </div>
-                <div class="summary-divider"></div>
-                <div class="price-container">
-                  <p class="paragraph-small">$299.99</p>
+                <div class="order-summary-info">
+                  <div>
+                    <p class="paragraph-light">Bought By</p>
+                    <p class="paragraph-small">David Nsoesie</p>
+                  </div>
+                  <div class="summary-divider"></div>
+                  <div class="price-container">
+                    <p class="paragraph-small">$299.99</p>
+                  </div>
                 </div>
               </div>
             </div>
+            <ng-template #noRecentOrdersBlock>
+              <div class="content-container">
+                <div class="content">
+                    <div style='color:rgb(142, 58, 190, .5)'>
+                        <fa-icon [icon]='shippingIcon' size='2x'></fa-icon>
+                    </div>
+                    <p class='paragraph-light'>No Recent Orders</p>
+                </div>
+              </div>
+            </ng-template>
           </div>
         </div>
+        <div class="statistics w-col w-col-6">
+          <div class="div-block">
+            <p class="paragraph-light-heading">Sales</p>
+            <div class="divider"></div>
+            <div class="graph-container">
+              <canvas baseChart 
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [plugins]="barChartPlugins"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+            </canvas>
+          </div>          </div>
+        </div>
       </div>
-      <div class="statistics w-col w-col-6">
-        <div class="div-block">
-          <p class="paragraph-light-heading">Sales</p>
-          <div class="divider"></div>
-          <div class="graph-container"></div>
+    </div>
+    <div class="options-container"></div>
+    <div class="columns-2 w-row">
+      <div class="nav-container w-col w-col-3">
+        <div class="nav-options"></div>
+      </div>
+      <div class="nav-content w-col w-col-9">
+        <div class="nav-filters">
+          <mat-tab-group mat-align-tabs="left" dynamicHeight>
+            <mat-tab label="Orders">
+              <div class="store-info">
+                <div class="filter-container">
+                  <div class="filter-heading">
+                    <h6>
+                      Orders
+                    </h6>
+                  </div>
+                  <div>
+                    <ul>
+                      <p class="paragraph-light filter">All orders</p>
+                      <p class="paragraph-light filter">Awaiting Payment</p>
+                      <p class="paragraph-light filter">Awaiting Shipment</p>
+                      <p class="paragraph-light filter">Paid and Shipped</p>
+                      <div class="divider filter"></div>
+                      <p class="paragraph-light filter">Cancellations</p>
+                      <p class="paragraph-light filter">Returns</p>
+                      <div class="divider filter"></div>
+                    </ul>
+                  </div>
+                </div>
+                <div style="width: 100%">
+                  <div class="nav-item-filter">
+                    <mat-form-field class="form-field-xl">
+                      <mat-label>Status</mat-label>
+                      <select matNativeControl required>
+                        <option value="all">All orders(*)</option>
+                        <option value="unpaid">Awaiting Payment</option>
+                        <option value="unshipped">Awaiting Shipment</option>
+                        <option value="fulfilled">Paid and Shipped</option>
+                        <option value="cancelled">Cancellations</option>
+                        <option value="returned">Returns</option>
+                      </select>
+                    </mat-form-field>
+                    <mat-form-field class="form-input xs">
+                      <mat-label>Time-frame</mat-label>
+                      <select matNativeControl required>
+                        <option value="all">Last 10 days</option>
+                        <option value="unpaid">Last 30 days</option>
+                        <option value="unshipped">Last 90 days</option>
+                      </select>
+                    </mat-form-field>
+                    <mat-form-field class="form-input xs">
+                      <mat-label>filter by</mat-label>
+                      <select matNativeControl required>
+                        <option value="all">Buyer username</option>
+                        <option value="unpaid">Order Name</option>
+                        <option value="unshipped">Price</option>
+                      </select>
+                    </mat-form-field>
+                    <mat-form-field class="form-field-xl">
+                      <mat-label>Search</mat-label>
+                      <input matInput />
+                    </mat-form-field>
+                  </div>
+                  <div class="nav-item-wrapper">
+                    <div class="result-wrapper">
+                      <span
+                        ><p class="paragraph-small">Results: 1 - 83 of 83</p>
+                        <p class="paragraph-light">( $$8,811.90 )</p></span
+                      >
+                    </div>
+                    <div class="item-option">
+                      <button mat-button class="filter-button">Relist</button>
+                      <button mat-button class="filter-button">
+                        Leave feedback
+                      </button>
+                    </div>
+                    <table class="tg">
+                      <tr>
+                        <th class="table-col">Actions</th>
+                        <th class="table-col xl">Order-details</th>
+                        <th class="table-col">Quantity</th>
+                        <th class="table-col">Price</th>
+                        <th class="table-col">Total</th>
+                        <th class="table-col">Date sold</th>
+                        <th class="table-col">Date Paid</th>
+                        <th class="table-col"></th>
+                      </tr>
+                      <tr>
+                        <td class="tg-73oq"></td>
+                        <td class="tg-73oq">
+                          information about listing sj bwiVFI hdfi vbioFB PIFB
+                          IHHFIEHFOB IBF IHBEIJ BIEFOWNDJ
+                        </td>
+                        <td class="table-data"></td>
+                        <td class="table-data"></td>
+                        <td class="table-data"></td>
+                        <td class="table-data"></td>
+                        <td class="table-data"></td>
+                        <td class="table-data"></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </mat-tab>
+  
+            <mat-tab label="Listings">
+              <div class="store-info">
+                <div class="filter-container">
+                  <div class="filter-heading">
+                    <h6>
+                      Listings
+                    </h6>
+                  </div>
+                  <div>
+                    <ul>
+                      <p class="paragraph-light filter">Overview</p>
+                      <p class="paragraph-light filter">Active</p>
+                      <p class="paragraph-light filter">Paid and shipped</p>
+                      <div class="divider filter"></div>
+                      <p class="paragraph-light filter">Cancellations</p>
+                      <p class="paragraph-light filter">Returns</p>
+                      <div class="divider filter"></div>
+                    </ul>
+                  </div>
+                </div>
+                <div style="width: 100%">
+                  <div class="nav-item-wrapper">
+                    <div class="item-listing-wrapper">
+                      <div class="summary-filter">
+                        <span>
+                          <h3>0</h3>
+                          <p class="paragraph-small">Active</p>
+                        </span>
+                        <span>
+                          <h3>0</h3>
+                          <p class="paragraph-small">Sold</p>
+                        </span>
+                        <span>
+                          <h3>0</h3>
+                          <p class="paragraph-small">Unsold</p>
+                        </span>
+                        <span>
+                          <h3>$00.00</h3>
+                          <p class="paragraph-light">90-day total</p>
+                        </span>
+                        <span class="button-wrapper">
+                          <a href="/create-listing">
+                            <button class="list-button" mat-button>
+                              List an Item
+                            </button>
+                          </a>
+                        </span>
+                      </div>
+                      <div class="table-wrapper">
+                        <table class="tg" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <th class="col-img-wrapper">Photo</th>
+                            <th class="table-col xl">Title</th>
+                            <th class="table-col">Price</th>
+                            <th class="table-col">Quantity</th>
+                            <th class="table-col">Views</th>
+                          </tr>
+                          <tr>
+                            <td class="img-wrapper">
+                              <img
+                                class="listing-image"
+                                src="../../../../assets/paul-volkmer-AZf7DL-8Qhk-unsplash.jpg"
+                              />
+                            </td>
+                            <td class="item-desc">Jordan 1 "Off white"</td>
+                            <td>$299.99</td>
+                            <td>50</td>
+                            <td>28</td>
+                          </tr>
+                          <tr>
+                            <td class="img-wrapper">
+                              <img
+                                class="listing-image"
+                                src="../../../../assets/paul-volkmer-AZf7DL-8Qhk-unsplash.jpg"
+                              />
+                            </td>
+                            <td>Jordan 1 "Off white"</td>
+                            <td>$299.99</td>
+                            <td>50</td>
+                            <td>28</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-tab>
+            <mat-tab label="Stats"></mat-tab>
+          </mat-tab-group>
         </div>
       </div>
     </div>
   </div>
-  <div class="options-container"></div>
-  <div class="columns-2 w-row">
-    <div class="nav-container w-col w-col-3">
-      <div class="nav-options"></div>
-    </div>
-    <div class="nav-content w-col w-col-9">
-      <div class="nav-filters">
-        <mat-tab-group mat-align-tabs="left" dynamicHeight>
-          <mat-tab label="Orders">
-            <div class="store-info">
-              <div class="filter-container">
-                <div class="filter-heading">
-                  <h6>
-                    Orders
-                  </h6>
-                </div>
-                <div>
-                  <ul>
-                    <p class="paragraph-light filter">All orders</p>
-                    <p class="paragraph-light filter">Awaiting Payment</p>
-                    <p class="paragraph-light filter">Awaiting Shipment</p>
-                    <p class="paragraph-light filter">Paid and Shipped</p>
-                    <div class="divider filter"></div>
-                    <p class="paragraph-light filter">Cancellations</p>
-                    <p class="paragraph-light filter">Returns</p>
-                    <div class="divider filter"></div>
-                  </ul>
-                </div>
-              </div>
-              <div style="width: 100%">
-                <div class="nav-item-filter">
-                  <mat-form-field class="form-field-xl">
-                    <mat-label>Status</mat-label>
-                    <select matNativeControl required>
-                      <option value="all">All orders(*)</option>
-                      <option value="unpaid">Awaiting Payment</option>
-                      <option value="unshipped">Awaiting Shipment</option>
-                      <option value="fulfilled">Paid and Shipped</option>
-                      <option value="cancelled">Cancellations</option>
-                      <option value="returned">Returns</option>
-                    </select>
-                  </mat-form-field>
-                  <mat-form-field class="form-input xs">
-                    <mat-label>Time-frame</mat-label>
-                    <select matNativeControl required>
-                      <option value="all">Last 10 days</option>
-                      <option value="unpaid">Last 30 days</option>
-                      <option value="unshipped">Last 90 days</option>
-                    </select>
-                  </mat-form-field>
-                  <mat-form-field class="form-input xs">
-                    <mat-label>filter by</mat-label>
-                    <select matNativeControl required>
-                      <option value="all">Buyer username</option>
-                      <option value="unpaid">Order Name</option>
-                      <option value="unshipped">Price</option>
-                    </select>
-                  </mat-form-field>
-                  <mat-form-field class="form-field-xl">
-                    <mat-label>Search</mat-label>
-                    <input matInput />
-                  </mat-form-field>
-                </div>
-                <div class="nav-item-wrapper">
-                  <div class="result-wrapper">
-                    <span
-                      ><p class="paragraph-small">Results: 1 - 83 of 83</p>
-                      <p class="paragraph-light">( $$8,811.90 )</p></span
-                    >
-                  </div>
-                  <div class="item-option">
-                    <button mat-button class="filter-button">Relist</button>
-                    <button mat-button class="filter-button">
-                      Leave feedback
-                    </button>
-                  </div>
-                  <table class="tg">
-                    <tr>
-                      <th class="table-col">Actions</th>
-                      <th class="table-col xl">Order-details</th>
-                      <th class="table-col">Quantity</th>
-                      <th class="table-col">Price</th>
-                      <th class="table-col">Total</th>
-                      <th class="table-col">Date sold</th>
-                      <th class="table-col">Date Paid</th>
-                      <th class="table-col"></th>
-                    </tr>
-                    <tr>
-                      <td class="tg-73oq"></td>
-                      <td class="tg-73oq">
-                        information about listing sj bwiVFI hdfi vbioFB PIFB
-                        IHHFIEHFOB IBF IHBEIJ BIEFOWNDJ
-                      </td>
-                      <td class="table-data"></td>
-                      <td class="table-data"></td>
-                      <td class="table-data"></td>
-                      <td class="table-data"></td>
-                      <td class="table-data"></td>
-                      <td class="table-data"></td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </mat-tab>
-
-          <mat-tab label="Listings">
-            <div class="store-info">
-              <div class="filter-container">
-                <div class="filter-heading">
-                  <h6>
-                    Listings
-                  </h6>
-                </div>
-                <div>
-                  <ul>
-                    <p class="paragraph-light filter">Overview</p>
-                    <p class="paragraph-light filter">Active</p>
-                    <p class="paragraph-light filter">Paid and shipped</p>
-                    <div class="divider filter"></div>
-                    <p class="paragraph-light filter">Cancellations</p>
-                    <p class="paragraph-light filter">Returns</p>
-                    <div class="divider filter"></div>
-                  </ul>
-                </div>
-              </div>
-              <div style="width: 100%">
-                <div class="nav-item-wrapper">
-                  <div class="item-listing-wrapper">
-                    <div class="summary-filter">
-                      <span>
-                        <h3>0</h3>
-                        <p class="paragraph-small">Active</p>
-                      </span>
-                      <span>
-                        <h3>0</h3>
-                        <p class="paragraph-small">Sold</p>
-                      </span>
-                      <span>
-                        <h3>0</h3>
-                        <p class="paragraph-small">Unsold</p>
-                      </span>
-                      <span>
-                        <h3>$00.00</h3>
-                        <p class="paragraph-light">90-day total</p>
-                      </span>
-                      <span class="button-wrapper">
-                        <a href="/create-listing">
-                          <button class="list-button" mat-button>
-                            List an Item
-                          </button>
-                        </a>
-                      </span>
-                    </div>
-                    <div class="table-wrapper">
-                      <table class="tg" cellspacing="0" cellpadding="0">
-                        <tr>
-                          <th class="col-img-wrapper">Photo</th>
-                          <th class="table-col xl">Title</th>
-                          <th class="table-col">Price</th>
-                          <th class="table-col">Quantity</th>
-                          <th class="table-col">Views</th>
-                        </tr>
-                        <tr>
-                          <td class="img-wrapper">
-                            <img
-                              class="listing-image"
-                              src="../../../../assets/paul-volkmer-AZf7DL-8Qhk-unsplash.jpg"
-                            />
-                          </td>
-                          <td class="item-desc">Jordan 1 "Off white"</td>
-                          <td>$299.99</td>
-                          <td>50</td>
-                          <td>28</td>
-                        </tr>
-                        <tr>
-                          <td class="img-wrapper">
-                            <img
-                              class="listing-image"
-                              src="../../../../assets/paul-volkmer-AZf7DL-8Qhk-unsplash.jpg"
-                            />
-                          </td>
-                          <td>Jordan 1 "Off white"</td>
-                          <td>$299.99</td>
-                          <td>50</td>
-                          <td>28</td>
-                        </tr>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </mat-tab>
-          <mat-tab label="Stats"></mat-tab>
-        </mat-tab-group>
-      </div>
-    </div>
-  </div>
 </div>
+<ng-template #noStoreBlock>
+  <div class="content-container">
+    <div class="content">
+        <div style='color:rgb(142, 58, 190)'>
+            <fa-icon [icon]='storeIcon' size='3x'></fa-icon>
+        </div>
+        <h2>It looks like you haven't opened up shop yet</h2>
+        <h2>Open one today!!</h2>
+        <span class="buttonRow">
+            <button mat-flat-button color="primary">
+              <a href="/create-store" style="color: white">
+                Create a store
+              </a>
+             </button>
+        </span>
+    </div>
+
+</div>
+</ng-template>
+

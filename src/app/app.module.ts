@@ -34,7 +34,8 @@ import { LotComponent } from './lot/lot.component';
 import { StoreComponent } from './lot/dashboards/store/store.component';
 import { BuilderComponent } from './lot/dashboards/store/components/builder/builder.component';
 import { LOTModule } from './lot/lot.module';
-import { CustomerComponent } from './lot/dashboards/customer/customer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import { CategoryFilterComponent } from './shared/category-filter/category-filter.component';
@@ -42,6 +43,12 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { FooterComponent } from './shared/footer/footer.component';
 import { BuyOrdersComponent } from './lot/dashboards/store/components/buy-orders/buy-orders.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartsModule } from 'ng2-charts';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list'; 
+import {MatMenuModule} from '@angular/material/menu';
+
+
 // tslint:disable-next-line: max-line-length
 import { BuyOrderDetailsComponent } from './lot/dashboards/store/components/buy-orders/components/buy-order-details/buy-order-details.component';
 import { DialogComponent } from './shared/dialog/dialog.component';
@@ -49,6 +56,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ConfirmationComponent } from './create-store/components/confirmation/confirmation.component';
 import { LoginDialogComponent } from './shared/login-dialog/login-dialog.component';
 import { AccountOptionsComponent } from './shared/menus/account-options/account-options.component';
+import { CustomerComponent } from './lot/dashboards/customer/customer.component';
+import { ListingsComponent } from './lot/dashboards/store/components/listings/listings.component';
 
 
 @NgModule({
@@ -75,6 +84,7 @@ import { AccountOptionsComponent } from './shared/menus/account-options/account-
     OrderSummaryComponent,
     CreateStoreComponent,
     LotComponent,
+    ListingsComponent,
 
     CustomerComponent,
 
@@ -117,7 +127,12 @@ import { AccountOptionsComponent } from './shared/menus/account-options/account-
     MatSelectModule,
     MatFormFieldModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule,
+    ChartsModule,
+    MatListModule,
+    MatSidenavModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

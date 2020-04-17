@@ -1,13 +1,16 @@
-<div style="width: 100%;background-color: #252525; 
+<div style="width: 100%;background-color: transparent; 
 ">
   <div class='navigation-container'>
     <div class="navigation-left">
-      <div class="logo-image"></div>
-      <span class="logo">
-        <a class='text' href='/'>
-          The LOT
-        </a>
-      </span>
+      <div class="logo-wrapper">
+        <div class="logo-image"></div>
+        <span class="logo">
+          <a class='text' href='/'>
+            The LOT
+          </a>
+        </span>
+      </div>
+      
       <span class="navigation-text">
         <a class="medium" href="/browse?category=shoes">Shoes</a>
       </span>
@@ -21,7 +24,9 @@
     <div class="navigation-right">
       <span class="navigation-text">
         <a class="medium" href="/browse">Browse</a></span>
-      <input class="search-bar"/>
+        <span class="navigation-text">
+          <input class="search-bar"/>
+        </span>
       
       <span *ngIf="user === null; else elseBlock" class="navigation-text"><a href="/auth" class="medium">Login</a></span>
       <ng-template #elseBlock>
@@ -35,39 +40,6 @@
   </div>
 </div>
   <div class="div-block">
-    <div class="columns-3 w-row">
-      <div class="column item w-col w-col-2">
-        
-        <div class="text-block">
-          <a href="/browse?brand=nike" class="light">Nike</a>
-        </div>
-      </div>
-      <div class="column item w-col w-col-2">
-        <div class="text-block">
-          <a href="/browse?brand=adidas" class="light">Adidas</a>
-        </div>
-      </div>
-      <div class="column item w-col w-col-2">
-        <div class="text-block">
-          <a href="/browse?brand=jordan" class="light">Jordan</a>
-        </div>
-      </div>
-      <div class="column item w-col w-col-2">
-        <div class="text-block">
-          <a href="/browse?brand=puma" class="light">Puma</a>
-        </div>
-      </div>
-      <div class="column item w-col w-col-2">
-        <div class="text-block">
-          <a href="/browse?brand=balenciaga" class="light">Balency</a>
-        </div>
-      </div>
-      <div class="column item w-col w-col-2">
-        <div class="text-block">
-          <a href="/browse?brand=yeezy" class="light">Yeezy</a>
-        </div>
-      </div>
-    </div>
   </div>
  <router-outlet></router-outlet>
 
