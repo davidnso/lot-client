@@ -1,3 +1,14 @@
-<div style="padding: 20px">
-    <router-outlet></router-outlet>
+<div style="padding: 20px; position: relative;">
+    <router-outlet>
+        <div *ngIf="true" class="toggle">
+                <a class="inactive" href="/dashboard/store">
+                    <fa-icon [icon]='storeIcon' size='lg'></fa-icon>
+                  </a>
+                  <a class="inactive" href="/dashboard/buy-orders">
+                    <p class="paragraph-small">Buy orders</p>
+                  </a>
+        </div>
+    </router-outlet>
+    
 </div>
+

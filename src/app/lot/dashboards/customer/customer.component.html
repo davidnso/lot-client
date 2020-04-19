@@ -1,13 +1,4 @@
-<div style="width:100%;border-bottom: 1px solid #cecece;">
-    <div class="category-filter">
-      <a href="/dashboard/user">
-        <p class="paragraph-small">Dashboard</p>
-      </a>
-      <a href="/dashboard/feedback">
-        <p class="paragraph-small">Feedback</p>
-      </a>
-    </div>
-  </div>
+
 <div class="profile-wrapper">
     <span>
         <img *ngIf="user.profileImgUrl; else elseBlock" class="profile-image" src="../../../../assets/profile-pic.png"/>
@@ -22,7 +13,7 @@
     </span>
 </div>
 <div class="account-info">
-    <div style="width:95%">
+    <div style="width:95%; margin: auto">
         <div style="width: 90%; margin: auto">
             <mat-tab-group>
                 <mat-tab label="Orders">

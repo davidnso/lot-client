@@ -22,10 +22,11 @@
   .image-container {
     height: 400px;
     margin-bottom: 4px;
-    background-image: url('../../../assets/items.png');
+    background-image: url('../../../assets/greens.jpg');
+    background-color: white;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     cursor: pointer;
   }
   

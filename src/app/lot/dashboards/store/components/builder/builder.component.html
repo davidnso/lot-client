@@ -1,92 +1,112 @@
 
-<div>
-    <h5>Dave's Sneakers</h5>
+<div class="heading">
+    <div class="active-store">
+        
+    </div>
+    <h5>Create a Listing</h5>
 </div>
-<div class="form-wrapper">
-    <div class="s1">
-        <h6>Basic Information</h6>
-        <mat-form-field>
-            <mat-label>Item name</mat-label>
-            <input matInput/>
-        </mat-form-field>
-        <div class="add-photos-wrapper">
-            <h3>+ Add Photos</h3>
-        </div>
-        <mat-form-field class="wide-text-area">
-            <mat-label>Description</mat-label>
-            <textarea matInput></textarea>
-        </mat-form-field>
-    </div>
-    <div class="s1">
-        <h6>Details</h6>
-        <p class="paragraph-small">Brand</p>
-        <mat-form-field>
-            <mat-label>Enter a brand</mat-label>
-            <input matInput />
-          </mat-form-field>
-        <p class="paragraph-small">Category</p>
-        <div class="row">
-            <span (click)="swapIndex(1)">
-                <img src="../../../../../../assets/shoe.png" class="large-button"/>
-                <p class="paragraph-light">Footwear</p>
-            </span>
-            <span (click)="swapIndex(2)">
-                <img src="../../../../../../assets/shirt.png" class="large-button"/>
-                <p class="paragraph-light">Apparel</p>
-            </span>
-            <span (click)="swapIndex(3)">
-                <img src="../../../../../../assets/watch.png" class="large-button"/>
-                <p class="paragraph-light">Accessories</p>
-            </span>
-        </div>
-        <div class="row"  *ngIf="index === 0 || index === null || index === undefined">Please select a Category</div>
-        <div class="row"  *ngIf="index === 1">
-            <span>
-                <div class="medium-button"></div>
-                <p class="paragraph-light">Loafers</p>
-            </span>
-            <span>
-                <div class="medium-button"></div>
-                <p class="paragraph-light">Basketball</p>
-            </span>
-            <span>
-                <div class="medium-button"></div>
-                <p class="paragraph-light">Lifestyle</p>
-            </span>
-            <span>
-                <div class="medium-button"></div>
-                <p class="paragraph-light">Running</p>
-            </span>
-            <span>
-                <div class="medium-button"></div>
-                <p class="paragraph-light">Other</p>
-            </span>
-        </div>
-        <div class="row" *ngIf="index === 2">Apparel Selected</div>
-        <div class="row" *ngIf="index === 3">Accessories Selected</div>
-        <div>
-            <mat-tab-group mat-align-tabs="left" dynamicHeight>
-                <mat-tab label="Men">
-                </mat-tab>
-                <mat-tab label="Women">
-                </mat-tab>
-                <mat-tab label="Kids">
-                </mat-tab>
-            </mat-tab-group>
-        </div>
-    </div>
-    <div class="s1">
-        <h6>Tags</h6>
-        <div class="row justify-none">
+<form [formGroup]="listingForm">
+    <div class="form-wrapper">
+        <div class="s1">
+            <h6>Basic Information</h6>
             <mat-form-field>
-                <mat-label>Enter tags here</mat-label>
-                <input matInput/>
+                <mat-label>Item name</mat-label>
+                <input formControlName="itemName" matInput/>
             </mat-form-field>
-            <button class="button-w-padding" mat-stroked-button color="primary">Add</button>
+            <div class="rendered-items" *ngIf="indexItems.length > 0">
+                <div *ngFor="let item of indexItems">
+                    <div class='card-wrapper'>
+                        <img class="round-image" src="https://stockx.imgix.net/Nike-Air-Max-90-Reverse-Duck-Camo-2020.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1584067533&w=1000"/>
+                       <ul>
+                           <li class="name">{{item.name}}</li>
+                           <li class="name">{{item.brand}}</li>
+                           <li class="price">{{item.price}}</li>
+
+                       </ul>
+
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="add-photos-wrapper">
+                <h3>+ Add Photos</h3>
+            </div> -->
+            <mat-form-field class="wide-text-area">
+                <mat-label>Description</mat-label>
+                <textarea matInput></textarea>
+            </mat-form-field>
         </div>
-        <p class="paragraph-light">*Makes it easier to search, please tag responsibly</p>
+        <div class="s1">
+            <h6>Details</h6>
+            <p class="paragraph-small">Brand</p>
+            <mat-form-field>
+                <mat-label>Enter a brand</mat-label>
+                <input matInput />
+              </mat-form-field>
+            <p class="paragraph-small">Category</p>
+            <div class="row">
+                <span (click)="swapIndex(1)">
+                    <img src="../../../../../../assets/shoe.png" class="large-button"/>
+                    <p class="paragraph-light">Footwear</p>
+                </span>
+                <span (click)="swapIndex(2)">
+                    <img src="../../../../../../assets/shirt.png" class="large-button"/>
+                    <p class="paragraph-light">Apparel</p>
+                </span>
+                <span (click)="swapIndex(3)">
+                    <img src="../../../../../../assets/watch.png" class="large-button"/>
+                    <p class="paragraph-light">Accessories</p>
+                </span>
+            </div>
+            <div class="row"  *ngIf="index === 0 || index === null || index === undefined">Please select a Category</div>
+            <div class="row"  *ngIf="index === 1">
+                <span>
+                    <div class="medium-button"></div>
+                    <p class="paragraph-light">Loafers</p>
+                </span>
+                <span>
+                    <div class="medium-button"></div>
+                    <p class="paragraph-light">Basketball</p>
+                </span>
+                <span>
+                    <div class="medium-button"></div>
+                    <p class="paragraph-light">Lifestyle</p>
+                </span>
+                <span>
+                    <div class="medium-button"></div>
+                    <p class="paragraph-light">Running</p>
+                </span>
+                <span>
+                    <div class="medium-button"></div>
+                    <p class="paragraph-light">Other</p>
+                </span>
+            </div>
+            <div class="row" *ngIf="index === 2">Apparel Selected</div>
+            <div class="row" *ngIf="index === 3">Accessories Selected</div>
+            <div>
+                <mat-tab-group mat-align-tabs="left" dynamicHeight>
+                    <mat-tab label="Men">
+                    </mat-tab>
+                    <mat-tab label="Women">
+                    </mat-tab>
+                    <mat-tab label="Kids">
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+        <div class="s1">
+            <h6>Tags</h6>
+            <div class="row justify-none">
+                <mat-form-field>
+                    <mat-label>Enter tags here</mat-label>
+                    <input matInput/>
+                </mat-form-field>
+                <button class="button-w-padding" mat-stroked-button color="primary">Add</button>
+            </div>
+            <p class="paragraph-light">*Makes it easier to search, please tag responsibly</p>
+        </div>
     </div>
-</div>
+</form>
+
 <div class="row justify-right">
     <button mat-button class="button-w-padding xl blue">Preview</button>
     <button mat-stroked-button class="button-w-padding xl black">Create</button>

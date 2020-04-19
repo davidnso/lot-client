@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {faStoreAlt,} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-lot',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LotComponent implements OnInit {
 
+  storeIcon = faStoreAlt;
   constructor() { }
 
   ngOnInit() {

@@ -1,13 +1,4 @@
-<div style="width:100%;border-bottom: 1px solid #cecece;">
-  <div class="category-filter">
-    <a href="/dashboard/store">
-      <p class="paragraph-small">Dashboard</p>
-    </a>
-    <a href="/dashboard/buy-orders">
-      <p class="paragraph-small">Buy orders</p>
-    </a>
-  </div>
-</div>
+
 <div *ngIf="activeOutlet != null; else noStoreBlock">
   <div>
     <h5>{{activeOutlet.name}}</h5>

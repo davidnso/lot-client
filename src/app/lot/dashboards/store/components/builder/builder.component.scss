@@ -1,106 +1,157 @@
-.form-wrapper{
-    background-color: white;
-    padding: 30px;
-    width: 90%;
-    margin-top: 30px;
-    margin:auto;
-}
-
-::ng-deep .mat-form-field-infix{
-    background-color: #F0F0F0;
-    height: 10px;
-    width: 300px;
-    border-radius: 5px;
-}
-
-
-
-
-.s1{
-    margin-bottom:50px;
-    margin-left: 30px;
-    .add-photos-wrapper{
-        width: 90%;
-        padding: 20px;
-        background-color: #FBFBFB;
-        cursor: pointer;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    h3{
-        color: #D2D2D2;
-    }
-    .wide-text-area{
-        min-width: 90%;
-        ::ng-deep .mat-form-field-wrapper{
-            background-color: #F0F0F0;
-            border-radius: 5px;
-        }
-    }
-}
-
-.row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 85%;
+.heading{
     text-align: center;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    span{
-        cursor: pointer;
-    }
-    span{
-        p{
-            transition: .3s ease-in-out;
-        }
-    }
-    span:hover{
-        p{
-            color: blue;
-        }
+    width: 100%;
+    margin: 10px;
+    .active-store{
+        background-color: white;
+        width: 200px;
+        height: 50px;
     }
 }
 
-.large-button{
-    height: 90px;
+.form-wrapper {
+  background-color: white;
+  padding: 30px;
+  width: 90%;
+  margin-top: 30px;
+  margin: auto;
 }
-.medium-button{
+
+// ::ng-deep .mat-form-field-infix {
+//   background-color: #f0f0f0;
+//   height: 10px;
+//   width: 300px;
+//   border-radius: 5px;
+// }
+
+.s1 {
+  margin-bottom: 50px;
+  margin-left: 30px;
+  .add-photos-wrapper {
+    width: 90%;
+    padding: 20px;
+    background-color: #fbfbfb;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    color: #d2d2d2;
+  }
+  .wide-text-area {
+    min-width: 90%;
+    ::ng-deep .mat-form-field-wrapper {
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 85%;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  span {
+    cursor: pointer;
+  }
+  span {
+    p {
+      transition: 0.3s ease-in-out;
+    }
+  }
+  span:hover {
+    p {
+      color: blue;
+    }
+  }
+}
+
+.large-button {
+  height: 90px;
+}
+.medium-button {
+  width: 70px;
+  height: 75px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+
+.row.justify-none {
+  justify-content: flex-start;
+  vertical-align: middle;
+}
+.row.justify-right {
+  justify-content: flex-end;
+  vertical-align: middle;
+}
+
+.button-w-padding {
+  margin: 0px 20px;
+  vertical-align: middle;
+  width: 100px;
+  height: 40px;
+}
+.button-w-padding.xl {
+  margin: 0px 20px;
+  vertical-align: middle;
+  width: 160px;
+  height: 40px;
+}
+
+.button-w-padding.xl.blue {
+  background-color: #4383e2;
+  color: white;
+}
+.button-w-padding.xl.black {
+  border: 1px solid black;
+}
+
+.rendered-items {
+  margin: 15px;
+}
+
+//search item styles
+
+.card-wrapper {
+  min-height: 110px;
+  width: 150px;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 5px 5px 15px rgba(187, 187, 187, 0.25);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+  .round-image {
+    background-color: grey;
     width: 70px;
-    height: 75px;
-    background-color: #F8F8F8;
-    border-radius: 10px;
+    height: 70px;
+    text-align: center;
+  }
+
+  .name {
+    color: #7d7d7d;
+  }
+  .price {
+    color: #4383e2;
+  }
 }
 
-.row.justify-none{
-    justify-content: flex-start;
-    vertical-align: middle;
+.card-wrapper:hover {
+    box-shadow: 5px 5px 15px rgba(67, 131, 226, 0.13);
 }
-.row.justify-right{
-    justify-content: flex-end;
-    vertical-align: middle;
+ul {
+  text-decoration: none;
+  list-style-type: none;
+  padding: 0px;
 }
-
-.button-w-padding{
-    margin:0px 20px;
-    vertical-align: middle;
-    width: 100px;
-    height: 40px;
-}
-.button-w-padding.xl{
-    margin:0px 20px;
-    vertical-align: middle;
-    width: 160px;
-    height: 40px;
-}
-
-.button-w-padding.xl.blue{
-    background-color: #4383E2;
-    color: white;
-
-}
-.button-w-padding.xl.black{
-    border: 1px solid black;
-
+li {
+  text-decoration: none;
+  list-style-type: none;
+  margin-top: 3px;
 }

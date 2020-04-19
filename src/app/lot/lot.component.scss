@@ -1,0 +1,28 @@
+.toggle{
+    position: fixed;
+    right: 0;
+    margin-top: 20%;
+    height: 180px;
+    width: 50px;
+    background-color: white;
+    box-shadow: 5px 5px 15px rgba(141, 141, 141, 0.25);
+    border-radius: 10px 0px 0px 10px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+a.inactive{
+    color: rgb(206, 206, 206);
+}
+
+a.active{ 
+    color: #4383E2;
+
+}

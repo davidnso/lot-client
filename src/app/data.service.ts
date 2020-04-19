@@ -68,7 +68,7 @@ export class DataService {
     try {
       const routeParams = "";
       return this.http.get(
-        `${environment.LOT_API}/outlet/${args.requester}/buyOrder/search?${routeParams}`
+        `${environment.LOT_API}/connect/asks?${routeParams}`
       );
     } catch (error) {
       throw error;
