@@ -63,12 +63,9 @@
 
             </div>
         </ng-container> -->
-        <div class ="content-row">
-            <app-thumbnail-item></app-thumbnail-item>
-            <app-thumbnail-item></app-thumbnail-item>
-            <app-thumbnail-item></app-thumbnail-item>
-            <app-thumbnail-item></app-thumbnail-item>
-            <app-thumbnail-item></app-thumbnail-item>
+        <div class ="content-row" >
+            <app-thumbnail-item *ngFor="let listing of resultSet" [data]="listing"></app-thumbnail-item>
+            
           </div>
 
     </div>

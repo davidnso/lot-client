@@ -8,8 +8,10 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: "root"
 })
 export class DataService {
-
-  constructor(private http: HttpClient) {}
+  
+  constructor(private http: HttpClient) {
+    
+  }
 
   createStore(args: {
     requester: string;
@@ -107,6 +109,47 @@ export class DataService {
     }
   }
 
+  searchItemIndex(args: { 
+    index? :string,
+    text: string,
+  }){ 
+    try {
+      return this.http.post(
+        `${environment.LOT_API}/connect/index/search`,
+        {info: {
+          index: args.index? args.index: "",
+          query: {
+            text: args.text
+          }
+        }}
+      );
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  searchListings(args: {
+    query: {},
+  }) {
+    try {
+      return this.http.get(
+        `${environment.LOT_API}/outlet/search/listings?${args.query}`,
+      );
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  }
+
+  fetchItemDetails(id){
+    try {
+      return this.http.get(
+        `${environment.LOT_API}/outlet/${id}/listing`,
+      );
+    } catch (error) {
+      throw error;
+    }
+  }
 
 
   // fetchUserOrders(args: {id: string }){

@@ -1,53 +1,46 @@
 <app-category-filter></app-category-filter>
-
-<div class="section cc-product-detail">
+<app-loader></app-loader>
+<div *ngIf="itemDetails.length > 0" class="section cc-product-detail">
   <div style="width:75%">
     <div class="image-grid">
-      <div class="product-image"></div>
-      <div class="product-image"></div>
-      <div class="product-image"></div>
-      <div class="product-image"></div>
+      <img [src]="itemDetails[0].indexItem.imageUrl" alt="image here" class="highlighted-image"/>
+      
 
     </div>
     <div class="row">
-      <div class='thumbnail-small'></div>
-      <div class='thumbnail-small'></div>
-
-      <div class='thumbnail-small'></div>
-      <div class='thumbnail-small'></div>
-      <div class='thumbnail-small'></div>
-
+      <!-- TODO: Convert to ng for and add logic to switch images. -->
+      <img [src]="itemDetails[0].indexItem.imageUrl" class='thumbnail-small'/>
+      
     </div>
   </div>
    
     <div class="product-details-wrap">
       <div class="category-price">
         <p class="paragraph-light">Men's athletic sneaker</p>
-        <p class="paragraph-small" style="font-weight: bold;">$299.99</p>
+        <p class="paragraph-small" style="font-weight: bold;">{{itemDetails[0].price}}</p>
       </div>
       <div class='title'>
-        <h3>Air Jordan 1 "Off White"</h3>
+        <h3>{{itemDetails[0].name}}</h3>
       </div>
         <p class="paragraph-small" style="font-weight: 400;">Select Size</p>
         <div class="size-select">
-          <div class="option"><p>9</p></div>
-          <div class="option"><p>9</p></div>
-          <div class="option"><p>9</p></div>
-          <div class="option"><p>9</p></div>
-          <div class="option"><p>9</p></div>
-          <div class="option"><p>9</p></div>
-          <div class="option"><p>9</p></div>
-          <div class="option"><p>9</p></div>
+          <div *ngFor="let item of itemDetails[0].details.stock" (click)="highlightSize(item.size)" class="option"><p>{{item.size}}</p></div>
         </div>
         <p class="paragraph-small" style="font-weight: 400;">Color</p>
         <mat-form-field>
           <mat-label>Choose a Color</mat-label>
-          <mat-select>
-            <mat-option value="black">Black</mat-option>
-            <mat-option value="white">White</mat-option>
-            <mat-option value="royal blue">Royal blue</mat-option>
+
+          <mat-select *ngIf="!highlightedColors; else showDetailedColors">
+            <!-- TODO: Enforce validation from the selected color to the selected size
+            Meaning a user shouldn't be able to choose a size that doesnt relate to a color and vise versa -->
+            <mat-option *ngFor="let items of itemDetails[0].details.stock" [value]="items.color">{{items.color}}</mat-option>
 
           </mat-select>
+          <ng-template #showDetailedColors>
+            <mat-select>
+              <mat-option *ngFor="let color of highlightedColors" [value]="color">{{color}}</mat-option>
+            </mat-select>
+          </ng-template>
         </mat-form-field>
         <div class="divider"></div>
          <p class="paragraph-small">

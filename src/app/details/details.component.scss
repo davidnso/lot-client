@@ -17,13 +17,26 @@
 
 .image-grid{
     width: 100%;
-    display:grid;
+
+}
+// .image-grid{
+//     width: 100%;
+//     display:grid;
+//     margin: auto;
+//     justify-content: center;
+//     grid-template-columns: repeat(auto-fill, 350px);
+//     grid-row: auto auto;
+//     grid-column-gap: 10px;
+//     grid-row-gap: 10px;
+// }
+
+.highlighted-image{
+    width: 80%;
+    height: 70%;
+    display: block;
     margin: auto;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fill, 350px);
-    grid-row: auto auto;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    align-self: center;
+    text-align: center;
 }
 
 .product-image {
