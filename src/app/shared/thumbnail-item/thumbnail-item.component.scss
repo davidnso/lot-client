@@ -21,13 +21,22 @@
   
   .image-container {
     height: 400px;
+    width: 330px;
     margin-bottom: 4px;
-    background-image: url('../../../assets/greens.jpg');
     background-color: white;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     cursor: pointer;
+    .helper {
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+  }
+    img{
+      vertical-align: middle;
+      width: 100%;
+    }
   }
   
   .grid {
@@ -71,3 +80,6 @@
 
   }
 
+  a{
+    text-decoration: none;
+  }

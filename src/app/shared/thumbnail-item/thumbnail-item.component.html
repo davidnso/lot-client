@@ -1,20 +1,23 @@
 <div class="container w-container">
-  <a href="/details">
+  <a href="/details/{{data._id}}?name={{data.name}}">
     <div class="div-block">
-      <div class="image-container"></div>
+      <div class="image-container">
+        <span class="helper"></span>
+        <img [src]="data.indexItem.imageUrl"/>
+      </div>
       <div class="description-container">
         <div class="w-layout-grid grid">
           <div class='left-content'>
-              <p class="main">Shoe name</p>
-              <p class="sub-content">Shoe name</p>
+              <p class="main"></p>
+              <p class="sub-content">{{data.name}}</p>
 
-              <p class="sub-content">Shoe name</p>
+              <p class="sub-content">{{data.brand}}</p>
 
             </div>
             
           <div id="price" class="right-content">
               <p class="main">
-                $99
+                {{data.price}}
               </p></div>
               
           
