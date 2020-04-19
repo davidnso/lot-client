@@ -14,6 +14,7 @@
   padding: 30px;
   width: 90%;
   margin-top: 30px;
+  min-height: 750px;
   margin: auto;
 }
 
@@ -45,6 +46,10 @@
       border-radius: 5px;
     }
   }
+}
+
+.s2{
+  margin-top: 20px;
 }
 
 .row {
@@ -113,6 +118,10 @@
 
 .rendered-items {
   margin: 15px;
+  display: flex;
+  flex-direction: row;
+  row-gap: 10px;
+  flex-wrap: wrap;
 }
 
 //search item styles
@@ -120,7 +129,9 @@
 .card-wrapper {
   min-height: 110px;
   width: 150px;
+  margin-left: 10px;
   border-radius: 5px;
+  animation: slide .5s ease-in-out;
   padding: 10px;
   box-shadow: 5px 5px 15px rgba(187, 187, 187, 0.25);
   display: flex;
@@ -134,12 +145,8 @@
     text-align: center;
   }
 
-  .name {
-    color: #7d7d7d;
-  }
-  .price {
-    color: #4383e2;
-  }
+ 
+
 }
 
 .card-wrapper:hover {
@@ -154,4 +161,101 @@ li {
   text-decoration: none;
   list-style-type: none;
   margin-top: 3px;
+}
+.name {
+  color: #7d7d7d;
+  padding-left: 5px;
+}
+.brand {
+  color: #4383e2;
+  padding: 5px;
+  border-radius: 5px;
+
+}
+
+
+//STYLES FOR CURRENT IMPLEMENTATION
+  .container{ 
+    width: 100%;
+    min-height: 500px;
+    position: relative;
+  }
+
+  .highlighted-item{ 
+    position: absolute;
+    padding: 5px;
+    bottom: 0;
+    z-index: 1;
+    margin: auto;
+    background-color: white;
+    width: 230px;
+    border-left: 3px solid #FF9900;
+
+  }
+
+  .round-image.small{ 
+    width: 50px;
+    height: 50px;
+  }
+
+  .size-grid{
+    display: grid;
+    grid-gap: 1px;
+    width: 20%;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5px;
+    row-gap: 10px;
+    .option{
+        display: table;
+        width: 30px;
+        height: 30px;
+        margin-top:10px;
+        border-radius:  5px;
+        border: 1px solid #747474;
+        color: #747474;
+        margin-right: 10px;
+        cursor: pointer;
+        text-align: center;
+        align-items: center;
+        transition: .2s ease-in-out;
+        p{
+            display: table-cell;
+
+            vertical-align: middle;
+            padding: 0px;
+            margin:0px;
+        }
+    }
+    .option:hover{
+        background-color: #e0e0e0
+    }
+  }
+
+  .summary-card{
+    margin: auto;
+    width: 300px;
+    background-color: #F4F7FC;
+    display: flex;
+    padding: 20px;
+    animation: fadeIn 1s;
+    flex-direction: column;
+    img{
+      width: 100%;
+    }
+    label{
+      font-weight: bold;
+    }
+  }
+
+
+
+@-webkit-keyframes slide {
+  100% { left: 0; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100%{
+    opacity: 1;
+  }
 }

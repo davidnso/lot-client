@@ -36,7 +36,7 @@ const routes: Routes = [
     component: PlugComponent
   },
   {
-    path: 'details',
+    path: 'details/:id',
     component: DetailsComponent
   },
   {

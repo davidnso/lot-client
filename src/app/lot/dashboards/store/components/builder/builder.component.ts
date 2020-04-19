@@ -1,28 +1,81 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { DataService } from 'src/app/data.service';
+import { IndexItem } from 'src/app/shared/types';
 
 @Component({
   selector: 'app-builder',
   templateUrl: './builder.component.html',
   styleUrls: ['./builder.component.scss'],
+  animations: [
+    trigger(
+      'inOutAnimation',
+      [
+        transition(
+          ':enter',
+          [
+            style({ 'margin-left': 50, opacity: 0 }),
+            animate('1s ease-out',
+                    style({ 'margin-left': 10, opacity: 1 }))
+          ]
+        ),
+        // transition(
+        //   ':leave',
+        //   [
+        //     style({ height: 300, opacity: 1 }),
+        //     animate('1s ease-in',
+        //             style({ height: 0, opacity: 0 }))
+        //   ]
+        // )
+      ]
+    ),
+    trigger(
+      'fadeInOut',
+      [
+        transition(
+          ':enter',
+          [
+            style({ opacity: 0 }),
+            animate('1s ease-out',
+                    style({  opacity: 1 }))
+          ]
+        ),
+        // transition(
+        //   ':leave',
+        //   [
+        //     style({ opacity: 1 }),
+        //     animate('1s ease-in',
+        //             style({  opacity: 0 }))
+        //   ]
+        // )
+      ]
+    )
+  ]
 })
 export class BuilderComponent implements OnInit {
   brands = [''];
   index = 0;
   listingForm = new FormGroup({
     itemName: new FormControl(''),
+    condition: new FormControl(''),
+    gender: new FormControl(''),
+    originalPackaging: new FormControl(''),
   });
+
+  highlightedItem: IndexItem;
+  selectedSizes: {size: string, quantity?: string}[] = [];
   @Output() searchEvent = new EventEmitter();
 
   indexItems = [];
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
     this.listingForm
       .get('itemName')
       .valueChanges.subscribe((searchVal: string) => {
-        if (searchVal.length > 4) {
-          this.submitSearchQuery();
+        if (searchVal.length >= 4) {
+          this.submitSearchQuery(searchVal);
         }
       });
   }
@@ -31,20 +84,13 @@ export class BuilderComponent implements OnInit {
     this.index = selectedIndex;
   }
 
-  submitSearchQuery() {
-    this.indexItems = [
-      {
-        "_id": "5e84efb3b6670131d42c5bf1",
-        "name": "Nike Air Max 90 Reverse Duck Camo",
-        "price": "$240",
-        "description": "",
-        "imageUrl": "https://stockx.imgix.net/Nike-Air-Max-90-Reverse-Duck-Camo-2020.png?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1584067533&w=1000",
-        "brand": "nike",
-        "category": "footwear"
-    },
-    ];
+  submitSearchQuery(query: string) {
+    this.dataService.searchItemIndex({text: query}).subscribe((items: any) => {
+      this.indexItems = items;
+      console.log(this.indexItems);
 
-    console.log(this.indexItems);
+    });
+
   }
   refresh() {
     this.indexItems = [
@@ -57,5 +103,37 @@ export class BuilderComponent implements OnInit {
     ];
 
     console.log(this.indexItems);
+  }
+
+  setHighlightedItem(item: IndexItem) {
+    try {
+      this.highlightedItem = item;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  updateHighlightedSizes(size: string) {
+    const sizeFound = this.selectedSizes.findIndex(item => item.size === size);
+    if (sizeFound === -1) {
+      this.selectedSizes.push({size});
+    } else {
+      this.selectedSizes.splice(sizeFound, 1);
+    }
+  }
+
+  updateQuantity(value, index) {
+    try {
+      this.selectedSizes[index].quantity = value;
+      console.log(this.selectedSizes);
+      const fullListingData = { 
+        item: this.highlightedItem,
+        formData : this.listingForm,
+        sizes: this.selectedSizes,
+      }
+      console.log(fullListingData)
+    } catch (error) {
+      throw error;
+    }
   }
 }

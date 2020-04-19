@@ -35,6 +35,8 @@ import { StoreComponent } from './lot/dashboards/store/store.component';
 import { BuilderComponent } from './lot/dashboards/store/components/builder/builder.component';
 import { LOTModule } from './lot/lot.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoaderService } from './services/loader.service';
+
 
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSelectModule} from '@angular/material/select';
@@ -47,6 +49,8 @@ import { ChartsModule } from 'ng2-charts';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list'; 
 import {MatMenuModule} from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 // tslint:disable-next-line: max-line-length
@@ -58,6 +62,8 @@ import { LoginDialogComponent } from './shared/login-dialog/login-dialog.compone
 import { AccountOptionsComponent } from './shared/menus/account-options/account-options.component';
 import { CustomerComponent } from './lot/dashboards/customer/customer.component';
 import { ListingsComponent } from './lot/dashboards/store/components/listings/listings.component';
+import { LoaderComponent } from './shared/loader/loader.component';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
 
 
 @NgModule({
@@ -102,7 +108,9 @@ import { ListingsComponent } from './lot/dashboards/store/components/listings/li
     
     LoginDialogComponent,
     
-    AccountOptionsComponent
+    AccountOptionsComponent,
+    
+    LoaderComponent
   ],
   entryComponents: [
     DialogComponent,
@@ -132,9 +140,13 @@ import { ListingsComponent } from './lot/dashboards/store/components/listings/li
     ChartsModule,
     MatListModule,
     MatSidenavModule,
-    MatMenuModule
+    MatMenuModule,
+    MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
