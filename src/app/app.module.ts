@@ -37,6 +37,7 @@ import { LOTModule } from './lot/lot.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoaderService } from './services/loader.service';
 
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSelectModule} from '@angular/material/select';
@@ -64,6 +65,10 @@ import { CustomerComponent } from './lot/dashboards/customer/customer.component'
 import { ListingsComponent } from './lot/dashboards/store/components/listings/listings.component';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import { CartService } from './cart/cart.service';
+import { FootwearComponent } from './browse/components/footwear/footwear.component';
+import { AccessoriesComponent } from './browse/components/accessories/accessories.component';
+import { ApparelComponent } from './browse/components/apparel/apparel.component';
 
 
 @NgModule({
@@ -110,8 +115,14 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
     
     AccountOptionsComponent,
     
-    LoaderComponent
-  ],
+    LoaderComponent,
+    
+    
+    FootwearComponent,
+    
+    AccessoriesComponent,
+    ApparelComponent,
+      ],
   entryComponents: [
     DialogComponent,
     ConfirmationComponent,
@@ -132,6 +143,7 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
     MatInputModule,
     MatPaginatorModule,
     MatButtonToggleModule,
+    MatExpansionModule,
     MatSelectModule,
     MatFormFieldModule,
     MatDialogModule,

@@ -16,9 +16,18 @@
  }
 }
 
+.store-button{
+  background-color: rgba(0, 0, 0, 0.034);
+  padding: 10px;
+  margin: auto;
+  width: 20%;
+  text-align: center;
+}
+
 .wrapper {
   width: 95%;
   margin: auto;
+  margin-top: 10px;
 }
 
 .columns {
@@ -379,7 +388,6 @@ col-img-wrapper{
 
 .listing-image{
   width: 70px;
-  height: 70px;
   border-radius: 5px;
   padding: 0px;
 }

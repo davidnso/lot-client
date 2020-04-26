@@ -42,7 +42,7 @@ h1::before{
 @keyframes head {
   0% { opacity:1;}
   25% { opacity:0;}
-  50% { opacity:1;}
+  50% { opacity:1; }
   65% { opacity:0;}
   80% { opacity:1; content: "SHOES"}
   90% { opacity:0;}
@@ -64,6 +64,14 @@ h1::before{
   }
 }
 
+.landing-image{
+  display: block;
+  margin: auto;
+  width: 90%;
+  animation-name: head;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;}
+
 h5{
   font-weight: bold;
   font-size: 22px;
@@ -79,7 +87,7 @@ h4{
 
 .container-right{
   background-color:rgba(245, 245, 245, 0.842);
-  min-width: 50%;
+  width: 50%;
   min-height: 100%;
 
 }

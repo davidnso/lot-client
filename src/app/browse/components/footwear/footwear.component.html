@@ -1,0 +1,148 @@
+<div class='category-splash'>
+    <img src="../../assets/shoes-frame.png" alt="">
+    <span >
+        <p>At the Lot we provide listings from trusted sellers in our area
+            and vow that whatever you can’t find in a search we can find through the connect. </p>
+        <h2>Shoes</h2>
+        <div class="divider"></div>
+    </span>
+   
+</div>
+
+<div class="divider"></div>
+<div class='search-area'>
+    <span class="navigation-text search">
+        <input #searchText class="search-bar" placeholder="Search shoes..."/>
+        <div (click)="submitSearch(searchText.value)">
+          <fa-icon [icon]='searchIcon' size='lg'></fa-icon>
+        </div>
+      </span>
+</div>
+
+<div class="filtered-browse-wrapper">
+
+    <div class="filter-wrapper">
+        <ul>
+            <h6>Brands</h6>
+            <mat-expansion-panel class="mat-elevation-z0">
+                <mat-expansion-panel-header>
+                    Athletic
+                </mat-expansion-panel-header>
+                <div *ngFor='let brand of footwearBrands.athletic'>
+                    <mat-checkbox [value]="brand.name">{{brand.name}}</mat-checkbox>
+                </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel class="mat-elevation-z0">
+                <mat-expansion-panel-header>
+                    Luxury
+                </mat-expansion-panel-header>
+                <div *ngFor='let brand of footwearBrands.lux'>
+                    <mat-checkbox [value]="brand">{{brand}}</mat-checkbox>
+                </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel class="mat-elevation-z0">
+                <mat-expansion-panel-header>
+                    Casual
+                </mat-expansion-panel-header>
+                <div *ngFor='let brand of footwearBrands.casual'>
+                    <mat-checkbox [value]="brand">{{brand}}</mat-checkbox>
+                </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel class="mat-elevation-z0">
+                <mat-expansion-panel-header>
+                    High-end Street
+                </mat-expansion-panel-header>
+                <div *ngFor='let brand of footwearBrands.highEndStreet'>
+                    <mat-checkbox [value]="brand">{{brand}}</mat-checkbox>
+                </div>
+            </mat-expansion-panel>
+            <h6>Category</h6>
+            <div style="display: flex;flex-direction: column;">
+            <mat-checkbox class="paragraph-light filter">Lifestyle ( # )</mat-checkbox>
+            <mat-checkbox class="paragraph-light filter">Running ( # )</mat-checkbox>
+            <mat-checkbox class="paragraph-light filter">Basketball ( # )</mat-checkbox>
+            <mat-checkbox class="paragraph-light filter">Golf ( # )</mat-checkbox>
+            </div>
+            
+            <div class="divider filter"></div>
+            <h6>Gender</h6>
+            <div style="display: flex;flex-direction: column;">
+                <mat-checkbox class="paragraph-light filter">Men</mat-checkbox>
+            <mat-checkbox class="paragraph-light filter">Women</mat-checkbox>
+            </div>
+            
+            <div class="divider filter"></div>
+            <h6>Kids</h6>
+            <div style="display: flex;flex-direction: column;">
+
+            <mat-checkbox class="paragraph-light filter">Boys</mat-checkbox>
+            <mat-checkbox class="paragraph-light filter">Girls</mat-checkbox>
+            </div>
+            <h6>Shop by price</h6>
+            <div style="display: flex;flex-direction: column;">
+
+            <mat-checkbox class="paragraph-light filter">$0-$49.99</mat-checkbox>
+            <mat-checkbox class="paragraph-light filter">$50-$99.99</mat-checkbox>
+            <mat-checkbox class="paragraph-light filter">$100-$149.99</mat-checkbox>
+            <mat-checkbox class="paragraph-light filter">$150-$199.99</mat-checkbox>
+            <mat-checkbox class="paragraph-light filter">over $200</mat-checkbox>
+            </div>
+
+            <h6>Color</h6>
+            <div class="filter-grid">
+                <div class="filter-item unselected white"></div>
+                <div class="filter-item unselected black"></div>
+                <div class="filter-item unselected grey"></div>
+                <div class="filter-item unselected red"></div>
+                <div class="filter-item unselected blue"></div>
+                <div class="filter-item unselected purple"></div>
+                <div class="filter-item unselected yellow"></div>
+                <div class="filter-item unselected white"></div>
+
+            </div>
+            <h6>Size</h6>
+            <div class="size-grid">
+                <div class="option"><p>5</p></div>
+                <div class="option"><p>6</p></div>
+                <div class="option"><p>7</p></div>
+                <div class="option"><p>8</p></div>
+                <div class="option"><p>9</p></div>
+                <div class="option"><p>10</p></div>
+                <div class="option"><p>11</p></div>
+                <div class="option"><p>12</p></div>
+                <div class="option"><p>5</p></div>
+                <div class="option"><p>6</p></div>
+                <div class="option"><p>7</p></div>
+                <div class="option"><p>8</p></div>
+                <div class="option"><p>9</p></div>
+                <div class="option"><p>10</p></div>
+                <div class="option"><p>11</p></div>
+                <div class="option"><p>12</p></div>
+              </div>
+        </ul>
+    </div>
+    <div class="column-box">
+        <!-- <ng-container [ngSwitch]="activeParam" >
+            <div  *ngSwitchCase="'apparel'" class="title-line">
+                <h2>Apparel</h2>
+
+            </div>
+        </ng-container> -->
+        <div class ="content-row" *ngIf="resultSet!== null && resultSet.length > 0; else noContentBlock">
+            <app-thumbnail-item *ngFor="let listing of resultSet" [data]="listing"></app-thumbnail-item>
+            
+          </div>
+          <ng-template #noContentBlock>
+              <div style="width: 100%; text-align: center; color: #cccccc; margin-top: 100px">
+                <fa-icon [icon]='searchIcon' size='lg'></fa-icon>
+                <h4>Sorry there were no results for that search</h4>
+            </div>
+          </ng-template>
+    </div>
+    
+</div>
+<mat-paginator [length]="100"
+[pageSize]="10"
+[pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>

@@ -1,10 +1,13 @@
 
 <div *ngIf="activeOutlet != null; else noStoreBlock">
-  <div>
+  <div class='store-button'>
+    <span style="background-color:#F6BC64; color: white; padding: 10px">
+      <fa-icon [icon]='storeIconMain' size='lg'></fa-icon>
+    </span>
     <h5>{{activeOutlet.name}}</h5>
   </div>
   <div class="wrapper">
-    <div>
+    <!-- <div>
       <div class="columns w-row">
         <div class="recent w-col w-col-6">
           <div class="base-container">
@@ -56,7 +59,7 @@
           </div>          </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="options-container"></div>
     <div class="columns-2 w-row">
       <div class="nav-container w-col w-col-3">
@@ -200,8 +203,8 @@
                           <p class="paragraph-small">Unsold</p>
                         </span>
                         <span>
-                          <h3>$00.00</h3>
-                          <p class="paragraph-light">90-day total</p>
+                          <h3>${{listingTotal}}</h3>
+                          <p class="paragraph-light">Active Listings Total</p>
                         </span>
                         <span class="button-wrapper">
                           <a href="/create-listing">
@@ -220,30 +223,19 @@
                             <th class="table-col">Quantity</th>
                             <th class="table-col">Views</th>
                           </tr>
-                          <tr>
+                          <tr *ngFor="let listing of activeListings">
                             <td class="img-wrapper">
                               <img
                                 class="listing-image"
-                                src="../../../../assets/paul-volkmer-AZf7DL-8Qhk-unsplash.jpg"
+                                [src]="listing.indexItem.imageUrl"
                               />
                             </td>
-                            <td class="item-desc">Jordan 1 "Off white"</td>
-                            <td>$299.99</td>
-                            <td>50</td>
+                            <td class="item-desc">{{listing.name}}</td>
+                            <td>{{listing.price}}</td>
+                            <td>30</td>
                             <td>28</td>
                           </tr>
-                          <tr>
-                            <td class="img-wrapper">
-                              <img
-                                class="listing-image"
-                                src="../../../../assets/paul-volkmer-AZf7DL-8Qhk-unsplash.jpg"
-                              />
-                            </td>
-                            <td>Jordan 1 "Off white"</td>
-                            <td>$299.99</td>
-                            <td>50</td>
-                            <td>28</td>
-                          </tr>
+                         
                         </table>
                       </div>
                     </div>

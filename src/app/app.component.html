@@ -12,20 +12,23 @@
       </div>
       
       <span class="navigation-text">
-        <a class="medium" href="/browse?category=shoes">Shoes</a>
+        <a class="medium" href="/footwear">Shoes</a>
       </span>
       <span class="navigation-text">
-        <a class="medium" href="/browse?category=apparel">Apparel</a>
+        <a class="medium" href="/apparel">Apparel</a>
       </span>
       <span class="navigation-text">
-        <a class="medium" href="/browse?category=accessories">Accessories</a>
+        <a class="medium" href="/accessories">Accessories</a>
       </span>
     </div>
     <div class="navigation-right">
       <span class="navigation-text">
         <a class="medium" href="/browse">Browse</a></span>
-        <span class="navigation-text">
-          <input class="search-bar"/>
+        <span class="navigation-text search">
+          <input #searchText class="search-bar" placeholder="Search the site..."/>
+          <div (click)="submitSearch(searchText.value)">
+            <fa-icon [icon]='searchIcon' size='lg'></fa-icon>
+          </div>
         </span>
       
       <span *ngIf="user === null; else elseBlock" class="navigation-text"><a href="/auth" class="medium">Login</a></span>
@@ -42,7 +45,6 @@
   <div class="div-block">
   </div>
  <router-outlet></router-outlet>
-
  <!-- <div class="footer-container">
    hi
  </div> -->

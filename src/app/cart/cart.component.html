@@ -1,34 +1,47 @@
 <div style="width: 90%; margin: auto">
     <h4>Shopping Bag</h4>
     <div class="flex-box">
-        <div style="width: 75%;">
+        <div style="width: 75%; background-color: white; padding: 10px">
             <table class="tg">
                 <tr>
-                  <th class="table-col"></th>
-                  <th class="table-col">Item</th>
-                  <th class="table-col xl">Description</th>
+                  <th class="table-col">Image</th>
+                  <th class="table-col">Details</th>
                   <th class="table-col">Quantity</th>
                   <th class="table-col">Total</th>
                   <th class="table-col"></th>
                 </tr>
-                <tr>
-                  <td class="table-data"></td>
-                  <td class="table-data">
-                      <img />
+                <tr style="border-bottom: 1px solid rgba(204, 204, 204, 0.247); min-height: 100px;" *ngFor="let item of cart; let i = index" data-href="/">
+                  
+                  <td class="table-data" style="text-align: center;">
+                      <img style="width: 60px;" [src]="item.image" alt="Item image"/>
                   </td>
                   <td class="table-data">
-                      <p class="paragraph-small">Name of item</p>
-                      <p class="paragraph-small">Color</p>
-                      <p class="paragraph-small">Size</p>
-                      <p class="paragraph-small">Price</p>
+                      <p class="paragraph-small">{{item.name}}</p>
+                      <p class="paragraph-small">{{item.color}}</p>
+                      <p class="paragraph-small">{{item.size}}</p>
+                      <p class="paragraph-small">{{item.price}}</p>
                   </td>
-                  <td class="table-data">12</td>
-                  <td class="table-data">$00.00</td>
-                  <td class="table-data"></td>
+                  <td class="table-data">{{item.quantity}}</td>
+                  <td class="table-data">{{item.price}}</td>
+                  <td class="table-data">
+                    <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                      <fa-icon [icon]='trashIcon' size='sm' (click)="removeItem(i)"></fa-icon>
+                      <fa-icon [icon]='editI' size='sm'></fa-icon>
+  </div>
+                  </td>
                   
                 </tr>
               </table>
         </div>
-        <div style="width: 370px; height:300px; background-color: #ccc;"></div>
+        <div style="width: 350px; background-color: #ccc; padding:20px">
+          <div class="divider"></div>
+          <h5 style="font-weight: bold; text-align: end;">Subtotal: ${{fullPrice}}</h5>
+          <div class="divider"></div>
+          <p class="paragraph-small right">
+            Tax and shipping charges are calculated during checkout.
+            you will see your final total before submitting your order
+          </p>
+          <button class="button-w-padding xl black" mat-button>Checkout</button>
+        </div>
     </div>
-</div><app-footer></app-footer>
+</div>

@@ -21,15 +21,37 @@
   justify-content: space-evenly;
 
   .search-bar {
-    width: 250px;
+    width: 500px;
     height: 15px;
-    border-radius: 5px;
-    color: white;
-    padding-top:15px;
+    border-radius: 5px 0px 0px 5px;
+    color: #444444;
+    padding:10px;
     background-color: #F0F0F0;
     border:none;
+    font-size: 14px;
     margin-left: 10px;
   }
+}
+
+.navigation-text.search{
+  position: relative;
+  div{
+    position: absolute;
+    display: inline-block;
+    padding: 10px;
+    height: 15px;
+    right: 0;
+    background-color: #4383E2; 
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+
+    fa-icon{
+      color: white; 
+      text-align: center; 
+      height: 15px;
+    }
+  }
+ 
 }
 .logo-wrapper{
     background-color: #5164C5;

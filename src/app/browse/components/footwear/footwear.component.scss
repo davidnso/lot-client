@@ -60,6 +60,17 @@
     width: 20%;
     min-width: 300px;
     margin-right: 20px;
+    
+  }
+
+  .filter-wrapper{
+    background-color: white;
+    border: 1px solid #cccccc;
+    padding-right: 10px;
+  }
+
+  .mat-expansion-panel {
+    
   }
   
   .paragraph-light.filter {
@@ -154,3 +165,45 @@
 .column-box{
     width: 100%;
 }
+.search-area{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    width: 600px;
+    height: 15px;
+    border-radius: 5px 0px 0px 5px;
+    color: #444444;
+    padding:10px;
+    background-color: #ffffff;
+    border:none;
+    border-bottom: 1px solid #cccccc;
+    font-size: 14px;
+    margin-left: 10px;
+    margin: auto;
+  }
+
+
+.navigation-text.search{    
+  position: relative;
+  div{
+    position: absolute;
+    display: inline-block;
+    padding: 10px;
+    height: 15px;
+    right: 0;
+    background-color: #ffffff; 
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+
+    fa-icon{
+      color: #444444; 
+      text-align: center; 
+      height: 15px;
+    }
+  }
+}
+ 

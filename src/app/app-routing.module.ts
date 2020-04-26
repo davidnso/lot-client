@@ -14,12 +14,27 @@ import { StoreComponent } from './lot/dashboards/store/store.component';
 import { CustomerComponent } from './lot/dashboards/customer/customer.component';
 import { BuyOrdersComponent } from './lot/dashboards/store/components/buy-orders/buy-orders.component';
 import { BuyOrderDetailsComponent } from './lot/dashboards/store/components/buy-orders/components/buy-order-details/buy-order-details.component';
+import { FootwearComponent } from './browse/components/footwear/footwear.component';
+import { ApparelComponent } from './browse/components/apparel/apparel.component';
+import { AccessoriesComponent } from './browse/components/accessories/accessories.component';
 
 
 const routes: Routes = [
   {
     path: 'browse',
-    component: BrowseComponent
+    component: BrowseComponent,
+  },
+  {
+    path: 'footwear',
+    component: FootwearComponent
+  },
+  {
+    path: 'apparel',
+    component: ApparelComponent,
+  },
+  {
+    path: 'accessories',
+    component: AccessoriesComponent
   },
   {
     path: '',

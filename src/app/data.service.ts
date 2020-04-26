@@ -69,6 +69,7 @@ export class DataService {
   }) {
     try {
       const routeParams = "";
+      console.log('trying')
       return this.http.get(
         `${environment.LOT_API}/connect/asks?${routeParams}`
       );

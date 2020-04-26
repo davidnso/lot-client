@@ -18,6 +18,7 @@ export interface IUser {
 }
 
 export interface IOutlet {
+  _id: string
   name: string;
   bannerImg: string;
   addresses: Address[];
@@ -35,3 +36,19 @@ export interface IndexItem {
   color?: string;
   category: string;
 }
+
+export interface ICart {
+  username: string;
+  items: ICartItem[];
+}
+
+export type ICartItem = {
+  itemId: string;
+  name: string,
+  image: string,
+  size: string,
+  link: string;
+  quantity: string;
+  price: string;
+  color: string;
+};

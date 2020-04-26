@@ -37,13 +37,13 @@
     color: #333;
     background-color: #f0f0f0;
   }
-  .tg tr{
+  .tg a tr{
     transition: .5s ease-in-out;
   }
-  .tg tr:hover{
-    cursor: pointer;
-    background-color: #FAFCFF !important;
-  }
+  // .tg tr:hover{
+  //   cursor: pointer;
+  //   background-color: #FAFCFF !important;
+  // }
   .tg .table-col.xl{
     min-width: 170px;
   }
@@ -55,6 +55,7 @@
   
   .tg .table-data {
     border-color: inherit;
+    min-height: 100px;
     text-align: left;
     vertical-align: top;
   }
@@ -64,4 +65,27 @@
     height: 180px;
     width: 160px;
     border-radius: 10px;
+}
+
+fa-icon:hover{
+  color: #4383E2;
+  cursor: pointer;
+}
+
+.button-w-padding.xl {
+  vertical-align: middle;
+  width: 100%;
+  margin: auto;
+  height: 40px;
+  margin-top: 30px;
+
+}
+
+.paragraph-small.right{
+  text-align: end;
+}
+
+.button-w-padding.xl.black {
+  background-color: black;
+  color: white
 }

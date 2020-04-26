@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { DataService } from "../data.service";
 import { BehaviorSubject } from "rxjs";
+import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: "app-details",
@@ -9,11 +10,12 @@ import { BehaviorSubject } from "rxjs";
   styleUrls: ["./details.component.scss"],
 })
 export class DetailsComponent implements OnInit {
-  itemDetails = {};
+  itemDetails:any;
 
   constructor(
     private route: ActivatedRoute,
-    private dataService: DataService
+    private dataService: DataService,
+    private carts: CartService
   ) {}
   private itemId;
   highlightedColors;
@@ -43,5 +45,21 @@ export class DetailsComponent implements OnInit {
     } catch (error) {
       throw error;
     }
+  }
+
+  addtoCart(){
+    this.carts.addItemtoCart(
+      {cartItem: {
+        name: this.itemDetails[0].name,
+        image: this.itemDetails[0].indexItem.imageUrl,
+        size: '10',
+        itemId: this.itemDetails[0]._id,
+        price: this.itemDetails[0].price,
+        quantity: '1',
+        color: 'black',
+        link: window.location.href,
+      }}
+    )
+    console.log('adding item')
   }
 }
